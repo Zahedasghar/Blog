@@ -10,5 +10,14 @@
   },
   "posts/welcome/index.qmd": {
     "index.html": "62848f77"
+  },
+  "resume.qmd": {
+    "resume.html": "090f3377"
+  },
+  "posts.qmd": {
+    "posts.html": "04e52fb8"
+  },
+  "posts/Higher_education/index.qmd": {
+    "index.html": "3640553d"
   }
 }
