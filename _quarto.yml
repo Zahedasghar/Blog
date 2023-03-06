@@ -22,7 +22,8 @@ website:
         text: Home
       - href: posts.qmd
         text: posts
-
+      - href: teaching.qmd
+        text: Teaching
       - href: resume.qmd
         text: Resume
         
