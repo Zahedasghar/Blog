@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Zahid Asghar",
+    "section": "",
+    "text": "I am Professor at School of Economics, Quaid-i-Azam University, Islamabad. I have extensive background working with applied econometrics, development issues (food security, urban and health) and using advanced analytics to enable data stakeholders to make informed decisions.\nI recently expanded my skill set to include topics like Quarto, tidymodels, working in R environment, and data visualization using animation and interactivity. I am passionate about skills for jobs now and in the future, Virtual learning with new educational accounting system. I am also learning how quantitative reasoning and logic with media , digital and data literacy may help to overcome fake news issues and lead actionable initiatives."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  }
+]
