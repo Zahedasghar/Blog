@@ -18,3 +18,7 @@ title-block-banner: true
 
 [Quantitative Methods for Development Economics](https://zahidasghar.com/QM4DE)
 
+[Econometrics 2022](https://zahidasghar.com/econometrics/Nonlinear)
+
+
+

@@ -14,6 +14,20 @@
     "text": "I am Professor at School of Economics, Quaid-i-Azam University, Islamabad. I have extensive background working with applied econometrics, development issues (food security, urban and health) and using advanced analytics to enable data stakeholders to make informed decisions.\nI recently expanded my skill set to include topics like Quarto, tidymodels, working in R environment, and data visualization using animation and interactivity. I am passionate about skills for jobs now and in the future, Virtual learning with new educational accounting system. I am also learning how quantitative reasoning and logic with media , digital and data literacy may help to overcome fake news issues and lead actionable initiatives."
   },
   {
+    "objectID": "myR/pakwheels/index.html",
+    "href": "myR/pakwheels/index.html",
+    "title": "Pakwheels Data analysis",
+    "section": "",
+    "text": "This post is about learning R.\n\nIn this post I have analysed pakwheels data with tidyverse. Anyone interested in learning basics of data analytics may find it helpful as all necessary details are given in the post. Pakwheels data are downloaded from pakwheels website."
+  },
+  {
+    "objectID": "myR.html",
+    "href": "myR.html",
+    "title": "Talks,trainigs,others",
+    "section": "",
+    "text": "While I regularly conduct trainings, occasionally writes in detail about use of data basics using R and deliver seminars. Some of these posts for start learning R are given here.\n\n\n\n\n\n\nTip\n\n\n\nYou can find my github code repository for my codes here.\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPakwheels Data analysis\n\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nZahid Asghar\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/Higher_education/index.html",
     "href": "posts/Higher_education/index.html",
     "title": "Virtual Learning: WayForward for Higher Education",
@@ -39,6 +53,6 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "Inferential Statistics\nQuantitative Methods for Development Economics"
+    "text": "Inferential Statistics\nQuantitative Methods for Development Economics\nEconometrics 2022"
   }
 ]

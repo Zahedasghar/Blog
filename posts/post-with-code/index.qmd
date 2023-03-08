@@ -1,6 +1,6 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Zahid Asghar"
 date: "2023-03-06"
 categories: [news, code, analysis]
 image: "image.jpg"

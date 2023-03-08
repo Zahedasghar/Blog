@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/about.html</loc>
-    <lastmod>2023-03-06T16:04:36.261Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/about.html</loc>
+    <lastmod>2023-03-08T07:08:13.174Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/index.html</loc>
-    <lastmod>2023-03-06T16:04:37.065Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/index.html</loc>
+    <lastmod>2023-03-08T07:08:13.647Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/posts/Higher_education/index.html</loc>
-    <lastmod>2023-03-06T16:04:37.893Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/myR/pakwheels/index.html</loc>
+    <lastmod>2023-03-08T07:08:14.192Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/posts/post-with-code/index.html</loc>
-    <lastmod>2023-03-06T16:04:39.418Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/myR.html</loc>
+    <lastmod>2023-03-08T07:08:14.736Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/posts/welcome/index.html</loc>
-    <lastmod>2023-03-06T16:04:40.102Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/posts/Higher_education/index.html</loc>
+    <lastmod>2023-03-08T07:08:15.274Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/posts.html</loc>
-    <lastmod>2023-03-06T16:04:40.895Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/posts/post-with-code/index.html</loc>
+    <lastmod>2023-03-08T07:08:16.490Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/resume.html</loc>
-    <lastmod>2023-03-06T16:04:41.558Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/posts/welcome/index.html</loc>
+    <lastmod>2023-03-08T07:08:16.906Z</lastmod>
   </url>
   <url>
-    <loc>https://profound-crumble-b6199c.netlify.app/teaching.html</loc>
-    <lastmod>2023-03-06T16:04:42.314Z</lastmod>
+    <loc>https://zahedasghar.netlify.app/posts.html</loc>
+    <lastmod>2023-03-08T07:08:17.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zahedasghar.netlify.app/resume.html</loc>
+    <lastmod>2023-03-08T07:08:17.827Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zahedasghar.netlify.app/teaching.html</loc>
+    <lastmod>2023-03-08T07:08:18.266Z</lastmod>
   </url>
 </urlset>

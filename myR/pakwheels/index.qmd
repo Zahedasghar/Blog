@@ -1,0 +1,12 @@
+---
+title: "Pakwheels Data analysis"
+author: "Zahid Asghar"
+date: "2023-03-03"
+categories: [opinion]
+---
+
+This post is about learning R.
+
+![](auto.jpg)
+
+In this post I have analysed pakwheels data with tidyverse. Anyone interested in learning basics of data analytics may find it helpful as all necessary details are given [in the post](https://zahidasghar.com/data_analytics/pakwheels). Pakwheels data are downloaded from [pakwheels website](pakwheels.com).

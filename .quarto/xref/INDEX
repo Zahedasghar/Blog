@@ -22,5 +22,14 @@
   },
   "teaching.qmd": {
     "teaching.html": "ce1368fe"
+  },
+  "myR.qmd": {
+    "myR.html": "8fd7dbe6"
+  },
+  "myR/gapminder/index.qmd": {
+    "index.html": "30ee635f"
+  },
+  "myR/pakwheels/index.qmd": {
+    "index.html": "66ddd0f5"
   }
 }

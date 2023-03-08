@@ -24,6 +24,8 @@ website:
         text: posts
       - href: teaching.qmd
         text: Teaching
+      - href: myR.qmd
+        text: MyR
       - href: resume.qmd
         text: Resume
         

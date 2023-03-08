@@ -11,5 +11,5 @@ image-height: 10em
 page-layout: full
 title-block-banner: true
 ---
-  
-## My blog posts 
+
+## My blog posts
