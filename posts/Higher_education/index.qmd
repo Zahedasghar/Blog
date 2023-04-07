@@ -5,21 +5,31 @@ date: "2023-03-03"
 categories: [opinion]
 ---
 
-This is the first post in a Quarto blog. Welcome!
 
-![](thumbnail.jpg)
+![](thumbnail.jpg){.column-margin}
 
 Pakistani universities were mainly launched as teaching institutions like many colleges in the United States in the 19^th^ century. There were limited research programs. Later, research element was introduced with a focus on quantity and achievement of certain metrics. As a result, more faculty and staff were recruited besides adding many bureaucratic staff in the name of quality enhancement, commercialization of research, and creating an imbalance in the faculty pyramid among many others. Most of these administrative jobs were created in the name of improving quality of research.
 
-Pension, salaries, and many other expenditures besides having more staff have increased manifold over time. Successive governments have not increased financing of the universities proportionate to their budgetary requirements. Universities are hard pressed to use the instrument of increasing fee and increasing enrolment without any concern for the quality. Question is how long this business-as-usual (BAU) approach will allow universities put extra burden on students' parent pockets. Parents are already facing economic miseries due to high inflation and limited earning opportunities. What are possible solutions and way-forward. This requires serious introspection and integrated thinking for reimagining higher education in the third decade of the 21^st^ century.
+Pension, salaries, and many other expenditures besides having more staff have increased manifold over time. Successive governments have not increased financing of the universities proportionate to their budgetary requirements. Universities are hard pressed to use the instrument of increasing fee and increasing enrolment without any concern for the quality.
+
+## Business as Usual
+
+::: {layout="[[30, 70], [100]]"}
+
+![](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*2FSfAm24xemmV0D5utdj1w.jpeg){width="50%"}
+
+Question is how long this business-as-usual (BAU) approach will allow universities put extra burden on students' parent pockets. Parents are already facing economic miseries due to high inflation and limited earning opportunities. What are possible solutions and way-forward. This requires serious introspection and integrated thinking for reimagining higher education in the third decade of the 21^st^ century.
+
+## Scaling and Developing Learning Outcome Ecosystem 
 
 World has gone digital and covid-19 pandemic has exposed the globe for online learning and Pakistan too have remained in this phase for two years. So digital emersion can help universities to come out of not only financial crisis but also can play an effective role in reaching those who have been unserved so far either due to financial constraints or limited enrollment capacity of the universities.
-
+:::: 
+![](vl.jpg){.column-margin}
 Moreover, it will help millions of Pakistanis to benefit from reputed Professors who are currently accessible to a privileged 100 or students per year. On one hand, Covid-19 pandemic has disrupted the entire traditional education system across the globe. But simultaneously it has opened many new opportunities to have tertiary education accessible to masses which was not possible before covid-19 pandemic. Cost of tertiary education is very high and has also limited capacity for scaling at large scale. But post-Covid-19 pandemic era has made it possible to provide tertiary education to most if not all at very affordable cost besides provision of flexible learning opportunities so that no one is left behind.
 
 Change is already here. Technological companies like Amazon, Google, Microsoft, all are offering their own badges, certificates, and credentials. Though these are for entry level jobs, gradually these companies will move up the educational food chain. These companies already carry an advantage of being operating at scale.
 
- 
+
 
 Online learning is different than distance learning and those who express their reservations about online learning and prefer physical learning basically confuse "Learning" and "Time". Their focus is on "Time" as fixed variable while "Learning" as a variable. But the concept of making "Learning" as fixed and "Time" as variable can make both online learning equally or even more useful than physical learning. While both can be good or bad in routine. Don't proponents of physical learning think that delivering a lecture to 40 to 50 students for three hours in one go per week and expecting students to grasp all the stuff is not a workable idea. Virtual learning mode with competency-based learning not only provides live lecture but also opportunity to understand it after the class.
 

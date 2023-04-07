@@ -6,9 +6,9 @@ about:
   image-width: 15em
   image-shape: round
   links:
-    - icon: mastodon
-      text: Mastodon
-      href: https://mastodon.social/@zahidasghar
+    - icon: youtube
+      text: Youtube
+      href: https://www.youtube.com/Zahidasghar
     - icon: twitter
       text: Twitter
       href: https://twitter.com/zahedasghar
@@ -23,6 +23,8 @@ about:
       href: mailto:g.zahid@gmail.com
 ---
 
-I am Professor at School of Economics, Quaid-i-Azam University, Islamabad. I have extensive background working with applied econometrics, development issues (food security, urban and health) and using advanced analytics to enable data stakeholders to make informed decisions.
+I am Professor at School of Economics, Quaid-i-Azam University, Islamabad. I have extensive background working with applied econometrics, development issues (food security, urban and health) and using advanced analytics to enable data stakeholders to make informed decisions. I have also served as Director, School of Economics, Registrar Quaid-i-Azam University, Islamabad and I am also member of Research Advisory Committee (RAC) of [RASTA Competitive Grants Program for Policy-oriented Research](https://rasta.pide.org.pk/).
 
-I recently expanded my skill set to include topics like Impact Evaluation Tools, Quarto, tidymodels, working in R environment, and data visualization using animation and interactivity. I am passionate about skills for jobs now and in the future, Virtual learning with new educational accounting system. I am also learning how quantitative reasoning and logic with media , digital and data literacy may help to lead actionable initiatives to spot and call fake/nonsense news.
+I recently expanded my skill set to include topics like Impact Evaluation Tools, Quarto, tidymodels, doing economics with R, and data visualization using animation and interactivity. I am passionate about skills for jobs now and in the future, Virtual learning with new educational accounting system. I am also learning how quantitative reasoning and logic with media , digital and data literacy may help to lead actionable initiatives to spot and call fake/nonsense news.
+
+

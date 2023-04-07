@@ -8,9 +8,11 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/Talk/index.html",
+      "/posts/youth_bulge_pol_stability/index.html",
       "/posts/post-with-code/index.html",
-      "/posts/Higher_education/index.html",
-      "/posts/welcome/index.html"
+      "/posts/Minimizing nonsense/index.html",
+      "/posts/Higher_education/index.html"
     ]
   },
   {

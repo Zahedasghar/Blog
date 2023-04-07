@@ -1,0 +1,10 @@
+---
+title: "Understanding and minimizing nonsense in digital world"
+author: "Zahid Asghar"
+date: "2023-03-23"
+categories: [talk]
+---
+
+![](thumbnail.jpg)
+
+Please find my talk on [**Understand and minimizing nonsense in digital world**](https://zahidasghar.com/data_analytics/quant_reasoning#/title-slide) **at IPRI data science workshop by \[atomcamp\](https://atomcamp.com)**

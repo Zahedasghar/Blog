@@ -30,9 +30,9 @@ website:
         text: Resume
         
     right:
-      - icon: mastodon
-        href: hhttps://mastodon.social/@zahidasghar
-        aria-label: Quarto Mastodon
+      - icon: youtube
+        href: hhttps://youtube.com/zahidasghar
+        aria-label: Quarto Youtube-channel
       - icon: twitter
         href: https://twitter.com/zahedasghar
         aria-label: Quarto Twitter

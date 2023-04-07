@@ -1,7 +1,7 @@
 - source: project
   quarto-pub:
     - id: f6ff7377-dae1-4410-9d38-8c5ef8759ed8
-      url: 'https://quartopub.com/sites/zahid/zahid-asghar'
+      url: 'https://zahid.quarto.pub/zahid-asghar'
   netlify:
     - id: 41570554-fd48-4763-8288-3be5ede5af88
       url: 'https://zahedasghar.netlify.app'
