@@ -1,0 +1,12 @@
+---
+title: "Mixed methods research (HSF fellows)"
+author: "Zahid Asghar"
+date: "2023-04-02"
+categories: [workshop]
+---
+
+![](tips_tricks.jpg){fig-align="center"}
+
+# **Mixed methods reseach tools**
+
+My talk on [Qualitative and Quantitative Data Analysis for Political](https://zahidasghar.com/UN-vote/hsf)

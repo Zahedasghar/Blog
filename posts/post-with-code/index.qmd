@@ -1,13 +1,39 @@
 ---
-title: "Post With Code"
+title: "Mental Junk Food: Bullshit Superspreader"
 author: "Zahid Asghar"
-date: "2023-03-06"
-categories: [news, code, analysis]
+date: "2023-04-16"
+categories: [opnion]
 image: "image.jpg"
 ---
 
-This is a post with executable code.
+What is mental junk food? How does it spread misinformation/disinformation? What skills are required to spot and call bullshit? These are important questions for all of us to ponder about for self-awareness and helping society to differentiate between misinformation/disinformation and facts.
 
-```{r}
-1 + 1
-```
+We have been warned by junk food for decades to maintain our physical health, and medical doctors always emphasize on using simple food. Junk food is tasty and enjoyable in the moment but lacks nutritional value and can be detrimental to health over time. But there is little talk about mental junk food. Mental junk food refers to content, activities, or behaviours that intellectually or emotionally unfulfilling, often providing short-term pleasure of distraction, but lacking in depth, meaning, or substance. Such activities may engage one with minimum effort and provide entertainment and keep one engaged for hours due to retention algorithms designed by social media giants. 
+
+A country like Pakistan where consuming too much junk food has yet not been the norm as most of its population can't afford. But mental junk food is cheap and easily accessible, therefore, a large population is consuming excessive mental junk food which has very detrimental effects on personal well-being, society, family and community. Pakistan has very low literacy rate and digital literacy rate is almost non-existent, so  differentiating between propaganda and facts is difficult to identify.  This has made things worse in terms of having meaningful dialogue and argument on any major issue of national or regional importance. This mounting pressure of social media puts undue pressure on governments, bureaucracy, organizations and even judiciary. As a result, there is high probability that right decision making is compromised.
+
+Politicians, media, science, academia, policy makers, start ups among others are engaged in spreading/rewarding misinformation/disinformation over analytics. Each of us, even if few of us knows its misinformation/disinformation, contribute to its share.
+
+Bullshit comes in the form of rhetoric or fancy language, what we call old-school bullshit. Politicians, media, science, academia, policy makers , start ups and many others are engaged in spreading/rewarding  misinformation/disinformation/propaganda over analytics. New propaganda strategy is to use data based analysis which becomes difficult to refute due to lack of knowledge about those sophisticated tools. Even though each of us knows this is bullshit but we all contribute to its share.
+
+People don't have time but have smartphones to spread bullshit. Despite the fact that one can easily check facts due to technology available in one's hand, bullshit goes largely unchallenged. Technology has made bullshit worse. To get quality information, we face the temptation to click on the informational equivalent of empty calories, the mental junk food usually wins. Click-driven media and the most successful headlines don't convey facts, they promise an emotional experience. **Fluffy and glitter overtaken in depth thoughtful content. Media is busy in keeping people engaged instead of keeping them informed.**
+
+Bullshit has been prevailing for millions of years even among animals according to scientific research, but it has become more rapid due to low cost of spreading information. Access to internet has made it easy to spread whatever one likes. Today anyone with one's personal computer and internet connection can produce professional-looking document and distribute them around the world without cost. All this can be done their pyjamas.
+
+This easy and almost free creation of the mindless lists, quizzes, memes, misinformation about scientific findings and celebrity gossip that proliferate social media have diverted us from thoughtful analyses of the sort one used to see in the *leading daily print media.*
+
+Social media has firehouse strategy, our trust in friends and institutions erode. **Gary Kasparov Russian chess grandmaster** summarized this approach in a post on Twitter: *"The point of modern propaganda isn't only to misinform or push an agenda, It is to exhaust your critical thinking, to annihilate truth."*  Prior to the Internet, news papers, periodical made money by selling subscriptions and cared about quality of information a source provided, its accuracy, and its relevance to your daily life. To attract subscribers and retain them, publishers provided novel and well-vetted information. In this digital era, being careful is admirable but it does not sell ads. Social media is fertile ground for disinformation. Incentives are to spread information without worrying about its content.
+
+*Satirist Jonathan Swift* wrote in 1710 that *"falsehood flies, and truth comes limping after it."*
+
+One can summarize it as :
+
+i\) misinformation/disinformation takes less work to create than to clean up,
+
+ii\) takes less intelligence to create than to clean up, and
+
+iii\) spreads faster than efforts to clean it up.
+
+How to spot and call misinformation/disinformation/falsehood in this environment.  Spotting bullshit is tantamount to walking around at night where we are aware of our surroundings and alert for signs of danger. We must learn how to question the source of information. Who is telling us all this? How does he or she know it? What is this person trying to sell us?  There is an urgent need to work on digital literacy not only among the masses but among the educated one so that they can spot and call bullshit. Spotting bullshit is important for an individual to know about it while calling bullshit is more important as it means conveying others about the same bullshit.
+
+Note: Word "Bullshit" is used in the context of lie, invention, falsehood, untruth, propaganda, misinformation, fabrication, white lie, half-truth, a tissue of lies, fairy tale without any offense.

@@ -1,0 +1,61 @@
+---
+title: "AI NEEDS YOU: A THOUGHT-PROVOKING EXPLORATION OF ARTIFICIAL INTELLIGENCE"
+author: "Zahid Asghar"
+date: "2023-04-02"
+categories: [analysis]
+---
+
+## AI NEEDS YOU: A THOUGHT-PROVOKING EXPLORATION OF ARTIFICIAL INTELLIGENCE
+
+![](https://m.media-amazon.com/images/I/51idKBQjijL._CR1,0,638,360_SR342,193_.jpg){width="658"}
+
+
+Verity Herding's *AI Needs You* offers a thought-provoking and comprehensive exploration of the rapid advancements and complex ethical dilemmas presented by artificial intelligence. The book is both a thrilling and alarming dive into AI's potential, showcasing its remarkable breakthroughs and the significant concerns it raises.
+
+Herding begins by highlighting the unprecedented speed at which AI researchers, armed with vast data and computational power, are achieving breakthroughs. These advancements have the potential to revolutionize various fields, from accurately diagnosing diseases to analyzing vast amounts of text data for profound insights. However, this great promise is tempered by the potential for unethical, disturbing, and dangerous uses of AI technology.
+
+A critical section of the book addresses the ethical dilemmas posed by AI. Herding points out the troubling frequency of mistakes in facial recognition technology, which disproportionately affect black and brown races, leading to serious consequences such as the wrongful victimization of innocent people. She also critiques Amazon for treating its workers like robots under stringent monitoring systems, overlooking the human aspect of their labor. This underscores the urgent need for ethical AI deployment and active involvement in shaping its future.
+
+**AI: A Reflection of Human Flaws and Aspirations**
+
+Artificial Intelligence, whether superintelligent or God-like, is ultimately a human creation and thus inherits human flaws as well as their brilliance. Herding argues for the urgent need to harness AI for humanity's benefit, warning that it might otherwise become a danger. Technologies developed by humans reflect both their aspirations and their imperfections, revealing both our disappointments and darker aspects over time.
+
+**Evolving Demands and AI's Power Players**
+
+The demand for science and technology evolves over time. In different eras, sea travel, communication, and oil were pivotal. Now, it is computer science. AI is predominantly controlled by powerful entities driven by profit motives. Herding emphasizes that this concentration of AI development in the hands of private giants, rather than under government control as in past scientific developments, could lead to serious repercussions. Silicon Valley grapples with cultural issues, where women and underrepresented groups often face challenges, leading to a decline in trust and an increase in greed.
+
+**The Political Nature of Technological Advancement**
+
+Technological development is inherently political, with preferences changing over time. Major advancements, like the internet, required substantial effort. Steering AI in the right direction will necessitate tremendous work from the government, technology companies, and the public. The US moon landing missions were politically motivated, debunking the notion that science is neutral. Similarly, AI's development is influenced by geopolitical interests, with China and the US racing for dominance.
+
+**AI: From Benefits to National Security Concerns**
+
+AI is globally seen as a peaceful and aspiring technology, but unlike government-regulated programs, its direction is dominated by private giants. China's goal to lead in AI by 2030 and the US's competitive stance highlight the concept of an "AI arms race," shifting the focus from AI's benefits and risks to its potential as a tool for national security. AI has been used for defense purposes, and its misuse, such as in Gaza, demands immediate intervention.
+
+**Military and Economic AI: The New Geopolitical Battlefield**
+
+AI is a new geopolitical field that must be won, leading to techno-nationalism. The Sino-US race for AI dominance involves a pursuit of superior technology without corresponding efforts to shape global norms. AI is viewed primarily as a means of national interest and competition, with little imagination beyond these constraints.
+
+**The Need for International Cooperation**
+
+Herding uses the IVF debate as a parallel to illustrate the necessity of societal acceptance for scientific advancements. The human egg donation debate, a significant aspect of IVF, raised numerous ethical issues, prompting the UK government to form specialized committees to address these concerns. One notable outcome was the establishment of the 14-day rule, which set ethical boundaries for embryo research. This historical example underscores the importance of regulatory frameworks and societal consensus in guiding scientific progress, a principle that Herding argues is equally crucial for the responsible development and deployment of AI technologies.
+
+**Public Acceptance and Disruption**
+
+Public acceptance and disruption in science are necessary, Herding argues, and she raises concerns about AI technologies being captured by a corporate mindset. The book also addresses the issue of AI-generated images being weaponized, as seen in Pakistan, where fake images are used for propaganda.
+
+**The Role of Experts and Regulation**
+
+Handling these issues is challenging, and some limitations on AI technology use are necessary. A committee of trusted experts should make sensible decisions regarding AI technology. She advocates for compromise, humility, and the acceptance of diverse viewpoints, qualities she finds lacking in the tech industry. The book critiques the concentration of AI development within private companies, which creates proprietary technologies that cannot be easily scrutinized, leading to a dangerous power imbalance.
+
+**The Influence of Powerful Entities**
+
+Powerful entities with vast resources develop AI that benefits their own values and services, creating a dangerous power imbalance. This alters the character of AI itself. Opposition to what higher education has become, a factory treating students like data, mirrors concerns about AI development.
+
+**The Impact of Technology on Society**
+
+Technology drives economic growth and expands opportunities. However, the concentration of wealth and power in the tech industry raises concerns about its impact on democracy and society. Regulation and oversight are crucial to ensure AI benefits all, not just the powerful few.
+
+**Conclusion**
+
+*AI Needs You* by Verity Herding is a compelling and insightful exploration of AI's potential and the ethical, societal, and political challenges it presents. Herding's arguments are well-researched and thought-provoking, making the book a must-read for anyone interested in the future of artificial intelligence and its impact on humanity. The book is a call to action, urging readers to engage actively in shaping AI's future to ensure it benefits humanity as a whole while maintaining ethical standards.
