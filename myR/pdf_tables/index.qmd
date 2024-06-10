@@ -1,0 +1,177 @@
+---
+title: "Extracting Data from PDFs documents using tabulapdf in R"
+subtitle: "Part 1"
+author: "Muhammad Yaseen, Zahid Asghar "
+date: "2024-06-09"
+categories: [R, PDF, Data Extraction]
+format: 
+  html:
+    toc: true
+    toc-float: true
+    toc_depth: 3
+    code_folding: show
+    number_sections: true
+    highlight-style: dracula
+editor: visual
+execute: 
+  freeze: auto
+  warning: false
+  message: false
+---
+
+![](pdf.webp){width=100%}
+
+## Introduction
+
+In this blog post, we will explore how to extract data from PDF files using the `tabulapdf` package in R. PDF is a common file format for sharing data, but extracting structured data from PDFs can be challenging. The `tabulapdf` package provides an easy way to extract tables from PDFs and convert them into a usable format.
+
+## Importance of Extracting Data from PDFs
+
+Extracting tables from PDF files is crucial for several reasons:
+
+1. **Data Accessibility**: Many important documents and reports are shared in PDF format. Extracting data from these documents makes it accessible for analysis and further use.
+2. **Automated Data Processing**: Manual data entry from PDFs is time-consuming and prone to errors. Automated extraction ensures accuracy and efficiency.
+3. **Data Integration**: Extracting data from PDFs allows for the integration of information from various sources, enhancing the comprehensiveness of data analysis.
+4. **Historical Data Analysis**: Many historical documents are available only in PDF format. Extracting data from these PDFs allows for the analysis of trends over time.
+5. **Enhanced Decision Making**: Having access to data in an analyzable format helps in making informed decisions based on comprehensive data analysis.
+
+So extracting tables from PDFs is a critical skill that enables access to important data, ensures accuracy, and saves time in data processing.We can automate the process and make the data extraction workflow more efficient. This not only improves productivity but also ensures that the data extracted is accurate and reliable, providing a solid foundation for any subsequent analysis or decision-making processes.
+
+Given these reasons, it's evident why efficient tools for extracting data from PDFs are invaluable. So lets learn how to extract data from PDFs using the `tabulapdf` package in R.
+
+## Required Libraries
+
+I have tried `tabulizer` to install but not successful. I have come across `tabulapdf` package and find it very handy. To begin, we'll need to install and load the necessary libraries. Here is the list of packages we'll be using:
+
+- `rJava`
+- `tabulapdf`
+- `pdftools`
+- `tidyverse`
+
+Let's load these libraries in R.
+
+```{r}
+Sys.setenv(JAVA_HOME = "C:/Program Files/Java/jdk-22") ## One check is for one's system if required for running `rJava`
+library(rJava)
+library(tabulapdf)
+library(pdftools)
+library(tidyverse)
+
+```
+
+## Extracting Tables from a PDF 
+
+
+
+
+The `extract_tables` function extracts tables from the specified page of the PDF file. In this case, we extracted the table from the first page of the sample PDF file.
+
+
+```{r}
+#| label: tbl-mtcars
+#| tbl-cap: Extracted Table from the PDF
+f2 <- "https://raw.githubusercontent.com/ropensci/tabulapdf/main/inst/examples/mtcars.pdf"
+
+extract_tables(f2, pages = 1) 
+```
+
+@tbl-mtcars indicates that the table has been successfully extracted from the PDF file. We can now proceed to convert this table into a data frame for further analysis.
+
+Now we will extract a table from a specific page of another PDF file. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.
+
+
+```{r}
+
+# URL of the monthly review PDF
+f1 <- "https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf"
+
+```
+
+
+::: {#fig-cpi}
+
+![](cpi.png)
+
+General Inflation (%) 
+::: 
+
+One can see from @fig-cpi that the table we want to extract is on the third page of the PDF. Let's extract the table from the third page of the PDF file.
+
+```{r}
+#| label: tbl-cpi
+#| tbl-cap: Extracted Table from the PDF
+# Extract and view the table from the third page of the PDF
+extract_tables(f1, pages = 3)[[1]] |> head()
+```
+
+@tbl-cpi indicates that the table has been successfully extracted from the PDF file. We can now proceed to convert this table into a data frame for further analysis.
+
+## Converting Extracted Table to Data Frame
+
+After extracting the table, we need to convert it into a data frame and clean the data for further analysis.
+
+```{r}
+
+table <- extract_tables(f1, pages = 3)[[1]]
+
+# Convert the extracted table to a data frame
+table_df <- as.data.frame(table)
+
+# Skip the first four rows
+table_filtered <- table_df %>% slice(-(1:4))
+
+# Combine the rows into a single text string
+table_text <- apply(table_filtered, 1, paste, collapse = " ")
+
+# Split the text into columns
+table_separated <- str_split_fixed(table_text, "\\s+", n = 19)  # Adjust 'n' based on the number of columns
+
+# Convert the separated text into a data frame
+table_separated_df <- as.data.frame(table_separated)
+```
+
+## Renaming Columns 
+
+We will now rename the columns to make the data more readable and meaningful.
+
+```{r}
+
+# Rename the columns of the data frame
+colnames(table_separated_df) <- c(
+  "Period", 
+  "CPI_general_yoy", "CPI_general_mom", 
+  "CPI_general_yoy_urban", "CPI_general_mom_urban", 
+  "CPI_general_yoy_rural", "CPI_general_mom_rural", 
+  "CPI_food_yoy_urban", "CPI_food_mom_urban", 
+  "CPI_food_yoy_rural", "CPI_food_mom_rural", 
+  "CPI_non_food_yoy_urban", "CPI_non_food_mom_urban", 
+  "CPI_non_food_yoy_rural", "CPI_non_food_mom_rural", 
+  "SPI_yoy", "SPI_mom", 
+  "WPI_yoy", "WPI_mom"
+)
+```
+
+## Cleaned Data Frame
+
+```{r}
+table_separated_df |> kableExtra::kable()
+```
+
+
+
+
+## Saving the Data to a CSV File and Excel File
+
+Finally, we can save the cleaned data to a CSV file for future use.
+
+```{r}
+
+# Save the table to a CSV file
+write.csv(table_separated_df, "table_separated_df.csv", row.names = FALSE)
+# Save the table to an Excel file
+writexl::write_xlsx(table_separated_df, "table_separated_df.xlsx")
+```
+
+## Conclusion 
+
+In this post, we demonstrated how to extract tables from PDF files using the `tabulapdf` package in R. We walked through the steps of loading necessary libraries, extracting tables from PDFs, converting them to data frames, cleaning the data, and finally saving it to a CSV file. This process can be very useful for extracting and analyzing data from PDF reports and documents. 

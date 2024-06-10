@@ -2,6 +2,12 @@
   quarto-pub:
     - id: f6ff7377-dae1-4410-9d38-8c5ef8759ed8
       url: 'https://zahid.quarto.pub/zahid-asghar'
+    - id: 270a4387-0c2f-4699-9251-704f39ddf28c
+      url: 'https://zahid.quarto.pub/-httpsusernamequartopubzahid-asghar'
+    - id: efcabd05-441d-42ab-b367-9bca2274e974
+      url: 'https://zahid.quarto.pub/zahid'
+    - id: 9e263ea0-40e9-4398-a135-ec8b9588299b
+      url: 'https://zahid.quarto.pub/pdf-table'
   netlify:
     - id: 41570554-fd48-4763-8288-3be5ede5af88
       url: 'https://zahedasghar.netlify.app'
@@ -9,3 +15,7 @@
       url: 'https://deft-donut-f85823.netlify.app'
     - id: 53436b7b-8391-4ef2-a92a-72806d59773c
       url: 'https://sage-moxie-6b4506.netlify.app'
+    - id: 5db2b567-ecec-44e6-b393-6e200227bcba
+      url: 'https://resplendent-chebakia-30306e.netlify.app'
+    - id: 78044a5f-d8e3-4df9-b4e0-ac408b3f34da
+      url: 'https://willowy-phoenix-8029f5.netlify.app'
