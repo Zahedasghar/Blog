@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Muhammad Yaseen, Zahid Asghar">
-<meta name="dcterms.date" content="2024-06-09">
+<meta name="dcterms.date" content="2024-06-12">
 
 <title>Zahid Asghar – Extracting Data from PDFs documents using tabulapdf in R</title>
 <style>
@@ -104,6 +104,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -181,7 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Extracting Data from PDFs documents using tabulapdf in R</h1>
-            <p class="subtitle lead">Part 1</p>
+            <p class="subtitle lead">Part 2</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">PDF</div>
@@ -196,14 +200,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Muhammad Yaseen, Zahid Asghar </p>
+               <p><a href="https://myaseen208.com/">Muhammad Yaseen</a>, <a href="https://zahid.quarto.pub/">Zahid Asghar</a> </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 9, 2024</p>
+        <p class="date">June 12, 2024</p>
       </div>
     </div>
     
@@ -220,14 +224,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#importance-of-extracting-data-from-pdfs" id="toc-importance-of-extracting-data-from-pdfs" class="nav-link" data-scroll-target="#importance-of-extracting-data-from-pdfs">Importance of Extracting Data from PDFs</a></li>
   <li><a href="#required-libraries" id="toc-required-libraries" class="nav-link" data-scroll-target="#required-libraries">Required Libraries</a></li>
   <li><a href="#extracting-tables-from-a-pdf" id="toc-extracting-tables-from-a-pdf" class="nav-link" data-scroll-target="#extracting-tables-from-a-pdf">Extracting Tables from a PDF</a></li>
-  <li><a href="#converting-extracted-table-to-data-frame" id="toc-converting-extracted-table-to-data-frame" class="nav-link" data-scroll-target="#converting-extracted-table-to-data-frame">Converting Extracted Table to Data Frame</a></li>
-  <li><a href="#renaming-columns" id="toc-renaming-columns" class="nav-link" data-scroll-target="#renaming-columns">Renaming Columns</a></li>
-  <li><a href="#cleaned-data-frame" id="toc-cleaned-data-frame" class="nav-link" data-scroll-target="#cleaned-data-frame">Cleaned Data Frame</a></li>
   <li><a href="#saving-the-data-to-a-csv-file-and-excel-file" id="toc-saving-the-data-to-a-csv-file-and-excel-file" class="nav-link" data-scroll-target="#saving-the-data-to-a-csv-file-and-excel-file">Saving the Data to a CSV File and Excel File</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -238,23 +237,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><img src="pdf.webp" class="img-fluid" style="width:100.0%"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In this blog post, we will explore how to extract data from PDF files using the <code>tabulapdf</code> package in R. PDF is a common file format for sharing data, but extracting structured data from PDFs can be challenging. The <code>tabulapdf</code> package provides an easy way to extract tables from PDFs and convert them into a usable format.</p>
-</section>
-<section id="importance-of-extracting-data-from-pdfs" class="level2">
-<h2 class="anchored" data-anchor-id="importance-of-extracting-data-from-pdfs">Importance of Extracting Data from PDFs</h2>
-<p>Extracting tables from PDF files is crucial for several reasons:</p>
-<ol type="1">
-<li><strong>Data Accessibility</strong>: Many important documents and reports are shared in PDF format. Extracting data from these documents makes it accessible for analysis and further use.</li>
-<li><strong>Automated Data Processing</strong>: Manual data entry from PDFs is time-consuming and prone to errors. Automated extraction ensures accuracy and efficiency.</li>
-<li><strong>Data Integration</strong>: Extracting data from PDFs allows for the integration of information from various sources, enhancing the comprehensiveness of data analysis.</li>
-<li><strong>Historical Data Analysis</strong>: Many historical documents are available only in PDF format. Extracting data from these PDFs allows for the analysis of trends over time.</li>
-<li><strong>Enhanced Decision Making</strong>: Having access to data in an analyzable format helps in making informed decisions based on comprehensive data analysis.</li>
-</ol>
-<p>So extracting tables from PDFs is a critical skill that enables access to important data, ensures accuracy, and saves time in data processing.We can automate the process and make the data extraction workflow more efficient. This not only improves productivity but also ensures that the data extracted is accurate and reliable, providing a solid foundation for any subsequent analysis or decision-making processes.</p>
-<p>Given these reasons, it’s evident why efficient tools for extracting data from PDFs are invaluable. So lets learn how to extract data from PDFs using the <code>tabulapdf</code> package in R.</p>
+<p>In the <a href="https://zahid.quarto.pub/pdf-table/myR/pdf_tables/">part 1</a> of extracting pdf tables, we discussed how to extract data from PDF files using the <code>tabulapdf</code> package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.</p>
+<p>We have same libraries as in the first part.</p>
 </section>
 <section id="required-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="required-libraries">Required Libraries</h2>
@@ -279,665 +265,639 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="extracting-tables-from-a-pdf" class="level2">
 <h2 class="anchored" data-anchor-id="extracting-tables-from-a-pdf">Extracting Tables from a PDF</h2>
-<p>The <code>extract_tables</code> function extracts tables from the specified page of the PDF file. In this case, we extracted the table from the first page of the sample PDF file.</p>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/ropensci/tabulapdf/main/inst/examples/mtcars.pdf"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_tables</span>(f2, <span class="at">pages =</span> <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="tbl-mtcars" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Extracted Table from the PDF
-</figcaption>
-<div aria-describedby="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-# A tibble: 5 × 12
-  model          mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-  &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Mazda RX4     21       6   160   110  3.9   2.62  16.5     0     1     4     4
-2 Mazda RX4 W…  21       6   160   110  3.9   2.88  17.0     0     1     4     4
-3 Datsun 710    22.8     4   108    93  3.85  2.32  18.6     1     1     4     1
-4 Hornet 4 Dr…  21.4     6   258   110  3.08  3.21  19.4     1     0     3     1
-5 Hornet Spor…  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2</code></pre>
-</div>
-</div>
-</figure>
-</div>
-<p><a href="#tbl-mtcars" class="quarto-xref">Table&nbsp;1</a> indicates that the table has been successfully extracted from the PDF file. We can now proceed to convert this table into a data frame for further analysis.</p>
-<p>Now we will extract a table from a specific page of another PDF file. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.</p>
+<p>Now we will extract a table from page 10 from the same PDF file as in part 1. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL of the monthly review PDF</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="st">"https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL of the monthly review PDF</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="st">"https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div id="fig-cpi" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="cpi.png" class="img-fluid figure-img">
+<img src="cpi8.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: General Inflation (%)
+Figure&nbsp;1: Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16)
 </figcaption>
 </figure>
 </div>
 <p>One can see from <a href="#fig-cpi" class="quarto-xref">Figure&nbsp;1</a> that the table we want to extract is on the third page of the PDF. Let’s extract the table from the third page of the PDF file.</p>
+<div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract and view the table from the third page of the PDF</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_tables</span>(f1, <span class="at">pages =</span> <span class="dv">3</span>)[[<span class="dv">1</span>]] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract and view the table from the third page of the PDF</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_tables</span>(f1, <span class="at">pages =</span><span class="dv">8</span> )[[<span class="dv">1</span>]] <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>() <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), <span class="at">full_width =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="tbl-cpi" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Extracted Table from the PDF
+Table&nbsp;1: Extracted Table from the PDF
 </figcaption>
 <div aria-describedby="tbl-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 7
-  `Table 1.a` ...2      ...3      General Inflation (%)(Base…¹ ...5  ...6  ...7 
-  &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
-1 &lt;NA&gt;        &lt;NA&gt;      &lt;NA&gt;      CPI                          &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt; 
-2 &lt;NA&gt;        &lt;NA&gt;      General   Food                         Non-… SPI** WPI  
-3 PERIOD      National  Urban     Rural Urban Rural            Urba… &lt;NA&gt;  &lt;NA&gt; 
-4 &lt;NA&gt;        YoY MoM   YoY MoM   YoY MoM YoY MoM YoY MoM      YoY … YoY … YoY …
-5 Aug-22      27.3 2.4  26.2 2.6  28.8 2.2 28.8 1.6 30.2 1.2   24.7… 34.0… 41.2…
-6 Sep-22      23.2 -1.2 21.2 -2.1 26.1 0.2 30.8 5.2 32.7 5.7   15.2… 28.6… 38.9…
-# ℹ abbreviated name: ¹​`General Inflation (%)(Base 2015-16)`</code></pre>
-</div>
-</div>
-</figure>
-</div>
-<p><a href="#tbl-cpi" class="quarto-xref">Table&nbsp;2</a> indicates that the table has been successfully extracted from the PDF file. We can now proceed to convert this table into a data frame for further analysis.</p>
-</section>
-<section id="converting-extracted-table-to-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="converting-extracted-table-to-data-frame">Converting Extracted Table to Data Frame</h2>
-<p>After extracting the table, we need to convert it into a data frame and clean the data for further analysis.</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">extract_tables</span>(f1, <span class="at">pages =</span> <span class="dv">3</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the extracted table to a data frame</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>table_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(table)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Skip the first four rows</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>table_filtered <span class="ot">&lt;-</span> table_df <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the rows into a single text string</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>table_text <span class="ot">&lt;-</span> <span class="fu">apply</span>(table_filtered, <span class="dv">1</span>, paste, <span class="at">collapse =</span> <span class="st">" "</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the text into columns</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>table_separated <span class="ot">&lt;-</span> <span class="fu">str_split_fixed</span>(table_text, <span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>, <span class="at">n =</span> <span class="dv">19</span>)  <span class="co"># Adjust 'n' based on the number of columns</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the separated text into a data frame</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>table_separated_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(table_separated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="renaming-columns" class="level2">
-<h2 class="anchored" data-anchor-id="renaming-columns">Renaming Columns</h2>
-<p>We will now rename the columns to make the data more readable and meaningful.</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns of the data frame</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(table_separated_df) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Period"</span>, </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_general_yoy"</span>, <span class="st">"CPI_general_mom"</span>, </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_general_yoy_urban"</span>, <span class="st">"CPI_general_mom_urban"</span>, </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_general_yoy_rural"</span>, <span class="st">"CPI_general_mom_rural"</span>, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_food_yoy_urban"</span>, <span class="st">"CPI_food_mom_urban"</span>, </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_food_yoy_rural"</span>, <span class="st">"CPI_food_mom_rural"</span>, </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_non_food_yoy_urban"</span>, <span class="st">"CPI_non_food_mom_urban"</span>, </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_non_food_yoy_rural"</span>, <span class="st">"CPI_non_food_mom_rural"</span>, </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SPI_yoy"</span>, <span class="st">"SPI_mom"</span>, </span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"WPI_yoy"</span>, <span class="st">"WPI_mom"</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="cleaned-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="cleaned-data-frame">Cleaned Data Frame</h2>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table_separated_df <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 2%">
-</colgroup>
+<div>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Period</th>
-<th style="text-align: left;">CPI_general_yoy</th>
-<th style="text-align: left;">CPI_general_mom</th>
-<th style="text-align: left;">CPI_general_yoy_urban</th>
-<th style="text-align: left;">CPI_general_mom_urban</th>
-<th style="text-align: left;">CPI_general_yoy_rural</th>
-<th style="text-align: left;">CPI_general_mom_rural</th>
-<th style="text-align: left;">CPI_food_yoy_urban</th>
-<th style="text-align: left;">CPI_food_mom_urban</th>
-<th style="text-align: left;">CPI_food_yoy_rural</th>
-<th style="text-align: left;">CPI_food_mom_rural</th>
-<th style="text-align: left;">CPI_non_food_yoy_urban</th>
-<th style="text-align: left;">CPI_non_food_mom_urban</th>
-<th style="text-align: left;">CPI_non_food_yoy_rural</th>
-<th style="text-align: left;">CPI_non_food_mom_rural</th>
-<th style="text-align: left;">SPI_yoy</th>
-<th style="text-align: left;">SPI_mom</th>
-<th style="text-align: left;">WPI_yoy</th>
-<th style="text-align: left;">WPI_mom</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Table 1: Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Aug-22</td>
-<td style="text-align: left;">27.3</td>
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">26.2</td>
-<td style="text-align: left;">2.6</td>
-<td style="text-align: left;">28.8</td>
-<td style="text-align: left;">2.2</td>
-<td style="text-align: left;">28.8</td>
-<td style="text-align: left;">1.6</td>
-<td style="text-align: left;">30.2</td>
-<td style="text-align: left;">1.2</td>
-<td style="text-align: left;">24.7</td>
-<td style="text-align: left;">3.3</td>
-<td style="text-align: left;">27.5</td>
-<td style="text-align: left;">3.1</td>
-<td style="text-align: left;">34.0</td>
-<td style="text-align: left;">5.2</td>
-<td style="text-align: left;">41.2</td>
-<td style="text-align: left;">3.1</td>
+<td style="text-align: left;">% Change Impact</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Sep-22</td>
-<td style="text-align: left;">23.2</td>
-<td style="text-align: left;">-1.2</td>
-<td style="text-align: left;">21.2</td>
-<td style="text-align: left;">-2.1</td>
-<td style="text-align: left;">26.1</td>
-<td style="text-align: left;">0.2</td>
-<td style="text-align: left;">30.8</td>
-<td style="text-align: left;">5.2</td>
-<td style="text-align: left;">32.7</td>
-<td style="text-align: left;">5.7</td>
-<td style="text-align: left;">15.2</td>
-<td style="text-align: left;">-6.6</td>
-<td style="text-align: left;">20.1</td>
-<td style="text-align: left;">-4.9</td>
-<td style="text-align: left;">28.6</td>
-<td style="text-align: left;">-1.4</td>
-<td style="text-align: left;">38.9</td>
-<td style="text-align: left;">1.4</td>
+<td style="text-align: left;">Group Indices May 2024 (In % points)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Oct-22</td>
-<td style="text-align: left;">26.6</td>
-<td style="text-align: left;">4.7</td>
-<td style="text-align: left;">24.6</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">29.5</td>
-<td style="text-align: left;">5.0</td>
-<td style="text-align: left;">34.7</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">37.2</td>
-<td style="text-align: left;">6.1</td>
-<td style="text-align: left;">18.2</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">22.4</td>
-<td style="text-align: left;">3.9</td>
-<td style="text-align: left;">24.0</td>
-<td style="text-align: left;">-1.5</td>
-<td style="text-align: left;">32.6</td>
-<td style="text-align: left;">-0.5</td>
+<td style="text-align: left;">Group Weight Over May 2024 Over</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Nov-22</td>
-<td style="text-align: left;">23.8</td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">21.6</td>
-<td style="text-align: left;">0.4</td>
-<td style="text-align: left;">27.2</td>
-<td style="text-align: left;">1.3</td>
-<td style="text-align: left;">29.7</td>
-<td style="text-align: left;">0.0</td>
-<td style="text-align: left;">33.5</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">16.4</td>
-<td style="text-align: left;">0.6</td>
-<td style="text-align: left;">21.4</td>
-<td style="text-align: left;">2.1</td>
-<td style="text-align: left;">27.1</td>
-<td style="text-align: left;">6.1</td>
-<td style="text-align: left;">27.7</td>
-<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">No (%)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Dec-22</td>
-<td style="text-align: left;">24.5</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">21.6</td>
-<td style="text-align: left;">0.3</td>
-<td style="text-align: left;">28.8</td>
-<td style="text-align: left;">0.7</td>
-<td style="text-align: left;">32.7</td>
-<td style="text-align: left;">0.0</td>
-<td style="text-align: left;">37.9</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">14.8</td>
-<td style="text-align: left;">0.6</td>
-<td style="text-align: left;">20.7</td>
-<td style="text-align: left;">1.4</td>
-<td style="text-align: left;">27.8</td>
-<td style="text-align: left;">0.2</td>
-<td style="text-align: left;">27.1</td>
-<td style="text-align: left;">-0.7</td>
+<td style="text-align: left;">May 24 April 24 May 23 April 24 May 23 April 24 May 23</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Jan-23</td>
-<td style="text-align: left;">27.6</td>
-<td style="text-align: left;">2.9</td>
-<td style="text-align: left;">24.4</td>
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">32.3</td>
-<td style="text-align: left;">3.6</td>
-<td style="text-align: left;">39.0</td>
-<td style="text-align: left;">3.9</td>
-<td style="text-align: left;">45.2</td>
-<td style="text-align: left;">5.7</td>
-<td style="text-align: left;">15.6</td>
-<td style="text-align: left;">1.2</td>
-<td style="text-align: left;">20.9</td>
-<td style="text-align: left;">1.5</td>
-<td style="text-align: left;">30.5</td>
-<td style="text-align: left;">1.3</td>
-<td style="text-align: left;">28.5</td>
-<td style="text-align: left;">1.8</td>
+<td style="text-align: left;">General 100.00 254.78 263.32 227.96 -3.24 11.76 -3.24 11.76</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Feb-23</td>
-<td style="text-align: left;">31.5</td>
-<td style="text-align: left;">4.3</td>
-<td style="text-align: left;">28.8</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">35.6</td>
-<td style="text-align: left;">4.0</td>
-<td style="text-align: left;">41.9</td>
-<td style="text-align: left;">4.3</td>
-<td style="text-align: left;">47.0</td>
-<td style="text-align: left;">3.9</td>
-<td style="text-align: left;">20.8</td>
-<td style="text-align: left;">4.7</td>
-<td style="text-align: left;">25.3</td>
-<td style="text-align: left;">4.1</td>
-<td style="text-align: left;">33.6</td>
-<td style="text-align: left;">3.7</td>
-<td style="text-align: left;">36.4</td>
-<td style="text-align: left;">8.2</td>
+<td style="text-align: left;">1. Food &amp; Non-alcoholic Bev. 34.58 264.01 286.43 264.45 -7.83 -0.17 -2.94 -0.07</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Mar-23</td>
-<td style="text-align: left;">35.4</td>
-<td style="text-align: left;">3.7</td>
-<td style="text-align: left;">33.0</td>
-<td style="text-align: left;">3.9</td>
-<td style="text-align: left;">38.9</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">47.1</td>
-<td style="text-align: left;">5.6</td>
-<td style="text-align: left;">50.2</td>
-<td style="text-align: left;">4.5</td>
-<td style="text-align: left;">24.1</td>
-<td style="text-align: left;">2.7</td>
-<td style="text-align: left;">28.5</td>
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">40.4</td>
-<td style="text-align: left;">5.8</td>
-<td style="text-align: left;">37.5</td>
-<td style="text-align: left;">4.7</td>
+<td style="text-align: left;">Non-perishable Food Items 29.60 266.43 282.07 271.20 -5.54 -1.76 -1.76 -0.62</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">May-23</td>
-<td style="text-align: left;">36.4</td>
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">33.5</td>
-<td style="text-align: left;">2.0</td>
-<td style="text-align: left;">40.7</td>
-<td style="text-align: left;">3.0</td>
-<td style="text-align: left;">46.8</td>
-<td style="text-align: left;">3.4</td>
-<td style="text-align: left;">52.2</td>
-<td style="text-align: left;">4.2</td>
-<td style="text-align: left;">24.9</td>
-<td style="text-align: left;">1.0</td>
-<td style="text-align: left;">29.9</td>
-<td style="text-align: left;">1.6</td>
-<td style="text-align: left;">42.1</td>
-<td style="text-align: left;">2.7</td>
-<td style="text-align: left;">33.4</td>
-<td style="text-align: left;">0.1</td>
+<td style="text-align: left;">Perishable Food Items 4.99 249.59 312.36 224.41 -20.10 11.22 -1.19 0.55</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">May-23</td>
-<td style="text-align: left;">38.0</td>
-<td style="text-align: left;">1.6</td>
-<td style="text-align: left;">35.1</td>
-<td style="text-align: left;">1.5</td>
-<td style="text-align: left;">42.2</td>
-<td style="text-align: left;">1.7</td>
-<td style="text-align: left;">48.1</td>
-<td style="text-align: left;">1.9</td>
-<td style="text-align: left;">52.4</td>
-<td style="text-align: left;">1.4</td>
-<td style="text-align: left;">26.6</td>
-<td style="text-align: left;">1.2</td>
-<td style="text-align: left;">32.5</td>
-<td style="text-align: left;">2.0</td>
-<td style="text-align: left;">43.0</td>
-<td style="text-align: left;">1.3</td>
-<td style="text-align: left;">32.8</td>
-<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">2. Alcoholic Bev. &amp; Tobacco 1.02 366.68 366.07 356.40 0.17 2.88 0.00 0.05</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Jun-23</td>
-<td style="text-align: left;">29.4</td>
-<td style="text-align: left;">-0.3</td>
-<td style="text-align: left;">27.3</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">32.4</td>
-<td style="text-align: left;">-0.8</td>
-<td style="text-align: left;">40.8</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">41.5</td>
-<td style="text-align: left;">-1.6</td>
-<td style="text-align: left;">18.7</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">23.8</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">34.9</td>
-<td style="text-align: left;">0.2</td>
-<td style="text-align: left;">22.4</td>
-<td style="text-align: left;">-0.3</td>
+<td style="text-align: left;">3. Clothing &amp; Footwear 8.60 239.46 238.38 202.95 0.46 17.99 0.04 1.38</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Jul-23</td>
-<td style="text-align: left;">28.3</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">26.3</td>
-<td style="text-align: left;">3.6</td>
-<td style="text-align: left;">31.3</td>
-<td style="text-align: left;">3.3</td>
-<td style="text-align: left;">40.2</td>
-<td style="text-align: left;">3.7</td>
-<td style="text-align: left;">41.3</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">17.3</td>
-<td style="text-align: left;">3.5</td>
-<td style="text-align: left;">22.0</td>
-<td style="text-align: left;">3.0</td>
-<td style="text-align: left;">29.3</td>
-<td style="text-align: left;">2.8</td>
-<td style="text-align: left;">23.1</td>
-<td style="text-align: left;">2.5</td>
+<td style="text-align: left;">Housing, Water, Electricity,</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Aug-23</td>
-<td style="text-align: left;">27.4</td>
-<td style="text-align: left;">1.7</td>
-<td style="text-align: left;">25.0</td>
-<td style="text-align: left;">1.6</td>
-<td style="text-align: left;">30.9</td>
-<td style="text-align: left;">1.9</td>
-<td style="text-align: left;">38.8</td>
-<td style="text-align: left;">0.6</td>
-<td style="text-align: left;">40.6</td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">16.3</td>
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">22.0</td>
-<td style="text-align: left;">3.1</td>
-<td style="text-align: left;">27.9</td>
-<td style="text-align: left;">4.1</td>
-<td style="text-align: left;">24.3</td>
-<td style="text-align: left;">4.2</td>
+<td style="text-align: left;">4. 23.63 236.63 239.81 177.92 -1.33 33.00 -0.29 6.08</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Sep-23</td>
-<td style="text-align: left;">31.4</td>
-<td style="text-align: left;">2.0</td>
-<td style="text-align: left;">29.7</td>
-<td style="text-align: left;">1.7</td>
-<td style="text-align: left;">33.9</td>
-<td style="text-align: left;">2.5</td>
-<td style="text-align: left;">33.9</td>
-<td style="text-align: left;">1.5</td>
-<td style="text-align: left;">35.4</td>
-<td style="text-align: left;">1.8</td>
-<td style="text-align: left;">26.8</td>
-<td style="text-align: left;">1.8</td>
-<td style="text-align: left;">32.3</td>
-<td style="text-align: left;">3.2</td>
-<td style="text-align: left;">32.0</td>
-<td style="text-align: left;">1.7</td>
-<td style="text-align: left;">26.4</td>
-<td style="text-align: left;">3.1</td>
+<td style="text-align: left;">Gas &amp; Fuels</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Oct-23</td>
-<td style="text-align: left;">26.8</td>
-<td style="text-align: left;">1.0</td>
-<td style="text-align: left;">25.5</td>
-<td style="text-align: left;">1.1</td>
-<td style="text-align: left;">28.7</td>
-<td style="text-align: left;">0.9</td>
-<td style="text-align: left;">28.9</td>
-<td style="text-align: left;">0.6</td>
-<td style="text-align: left;">28.6</td>
-<td style="text-align: left;">0.7</td>
-<td style="text-align: left;">23.1</td>
-<td style="text-align: left;">1.4</td>
-<td style="text-align: left;">28.8</td>
-<td style="text-align: left;">1.1</td>
-<td style="text-align: left;">34.2</td>
-<td style="text-align: left;">0.2</td>
-<td style="text-align: left;">24.6</td>
-<td style="text-align: left;">-1.9</td>
+<td style="text-align: left;">Furnishing &amp; Household</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Nov-23</td>
-<td style="text-align: left;">29.2</td>
-<td style="text-align: left;">2.7</td>
-<td style="text-align: left;">30.4</td>
-<td style="text-align: left;">4.3</td>
-<td style="text-align: left;">27.5</td>
-<td style="text-align: left;">0.4</td>
-<td style="text-align: left;">29.8</td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">29.2</td>
-<td style="text-align: left;">1.0</td>
-<td style="text-align: left;">30.9</td>
-<td style="text-align: left;">7.0</td>
-<td style="text-align: left;">25.9</td>
-<td style="text-align: left;">-0.2</td>
-<td style="text-align: left;">30.6</td>
-<td style="text-align: left;">3.3</td>
-<td style="text-align: left;">26.4</td>
-<td style="text-align: left;">1.4</td>
+<td style="text-align: left;">5. 4.10 267.41 266.41 235.09 0.37 13.75 0.02 0.58</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Dec-23</td>
-<td style="text-align: left;">29.7</td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">30.9</td>
-<td style="text-align: left;">0.7</td>
-<td style="text-align: left;">27.9</td>
-<td style="text-align: left;">1.0</td>
-<td style="text-align: left;">28.8</td>
-<td style="text-align: left;">-0.7</td>
-<td style="text-align: left;">29.3</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">32.4</td>
-<td style="text-align: left;">1.8</td>
-<td style="text-align: left;">26.4</td>
-<td style="text-align: left;">1.8</td>
-<td style="text-align: left;">35.3</td>
-<td style="text-align: left;">3.8</td>
-<td style="text-align: left;">27.3</td>
-<td style="text-align: left;">0.0</td>
+<td style="text-align: left;">Equipment Maintenance</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Jan-24</td>
-<td style="text-align: left;">28.3</td>
-<td style="text-align: left;">1.8</td>
-<td style="text-align: left;">30.2</td>
-<td style="text-align: left;">1.8</td>
-<td style="text-align: left;">25.7</td>
-<td style="text-align: left;">1.9</td>
-<td style="text-align: left;">27.4</td>
-<td style="text-align: left;">2.8</td>
-<td style="text-align: left;">25.1</td>
-<td style="text-align: left;">2.3</td>
-<td style="text-align: left;">32.3</td>
-<td style="text-align: left;">1.1</td>
-<td style="text-align: left;">26.3</td>
-<td style="text-align: left;">1.4</td>
-<td style="text-align: left;">36.2</td>
-<td style="text-align: left;">2.0</td>
-<td style="text-align: left;">27.0</td>
-<td style="text-align: left;">1.5</td>
+<td style="text-align: left;">6. Health 2.79 241.17 237.29 201.94 1.63 19.42 0.04 0.48</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Feb-24</td>
-<td style="text-align: left;">23.1</td>
-<td style="text-align: left;">0.0</td>
-<td style="text-align: left;">24.9</td>
-<td style="text-align: left;">0.2</td>
-<td style="text-align: left;">20.5</td>
-<td style="text-align: left;">-0.3</td>
-<td style="text-align: left;">20.2</td>
-<td style="text-align: left;">-1.5</td>
-<td style="text-align: left;">19.0</td>
-<td style="text-align: left;">-1.1</td>
-<td style="text-align: left;">28.2</td>
-<td style="text-align: left;">1.5</td>
-<td style="text-align: left;">22.1</td>
-<td style="text-align: left;">0.6</td>
-<td style="text-align: left;">30.4</td>
-<td style="text-align: left;">-0.8</td>
-<td style="text-align: left;">18.7</td>
-<td style="text-align: left;">1.1</td>
+<td style="text-align: left;">7. Transport 5.91 315.06 320.28 285.36 -1.63 10.41 -0.12 0.77</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Mar-24</td>
-<td style="text-align: left;">20.7</td>
-<td style="text-align: left;">1.7</td>
-<td style="text-align: left;">21.9</td>
-<td style="text-align: left;">1.4</td>
-<td style="text-align: left;">19.0</td>
-<td style="text-align: left;">2.1</td>
-<td style="text-align: left;">16.6</td>
-<td style="text-align: left;">2.4</td>
-<td style="text-align: left;">17.1</td>
-<td style="text-align: left;">2.8</td>
-<td style="text-align: left;">25.8</td>
-<td style="text-align: left;">0.7</td>
-<td style="text-align: left;">21.0</td>
-<td style="text-align: left;">1.4</td>
-<td style="text-align: left;">25.9</td>
-<td style="text-align: left;">2.1</td>
-<td style="text-align: left;">14.8</td>
-<td style="text-align: left;">1.3</td>
+<td style="text-align: left;">8. Communication 2.21 134.27 134.85 118.27 -0.43 13.53 0.00 0.16</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Apr-24</td>
-<td style="text-align: left;">17.3</td>
-<td style="text-align: left;">-0.4</td>
-<td style="text-align: left;">19.4</td>
-<td style="text-align: left;">-0.1</td>
-<td style="text-align: left;">14.5</td>
-<td style="text-align: left;">-0.9</td>
-<td style="text-align: left;">11.3</td>
-<td style="text-align: left;">-1.3</td>
-<td style="text-align: left;">9.5</td>
-<td style="text-align: left;">-2.6</td>
-<td style="text-align: left;">25.6</td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">20.0</td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">21.6</td>
-<td style="text-align: left;">-0.7</td>
-<td style="text-align: left;">13.9</td>
-<td style="text-align: left;">-0.7</td>
+<td style="text-align: left;">9. Recreation &amp; Culture 1.59 262.27 258.77 242.93 1.35 7.96 0.02 0.13</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">May-24</td>
-<td style="text-align: left;">11.8</td>
-<td style="text-align: left;">-3.2</td>
-<td style="text-align: left;">14.3</td>
-<td style="text-align: left;">-2.8</td>
-<td style="text-align: left;">8.2</td>
-<td style="text-align: left;">-3.9</td>
-<td style="text-align: left;">2.2</td>
-<td style="text-align: left;">-6.3</td>
-<td style="text-align: left;">-0.1</td>
-<td style="text-align: left;">-7.4</td>
-<td style="text-align: left;">23.6</td>
-<td style="text-align: left;">-0.4</td>
-<td style="text-align: left;">17.2</td>
-<td style="text-align: left;">-0.4</td>
-<td style="text-align: left;">15.3</td>
-<td style="text-align: left;">-4.0</td>
-<td style="text-align: left;">9.9</td>
-<td style="text-align: left;">-2.5</td>
+<td style="text-align: left;">10. Education 3.79 199.00 196.20 171.63 1.43 15.95 0.04 0.45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11. Restaurants &amp; Hotels 6.92 267.22 269.38 235.03 -0.80 13.70 -0.06 0.98</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12. Miscellaneous 4.87 282.79 282.22 246.64 0.20 14.66 0.01 0.77</td>
 </tr>
 </tbody>
 </table>
 </div>
+
+
 </div>
-</section>
-<section id="saving-the-data-to-a-csv-file-and-excel-file" class="level2">
-<h2 class="anchored" data-anchor-id="saving-the-data-to-a-csv-file-and-excel-file">Saving the Data to a CSV File and Excel File</h2>
-<p>Finally, we can save the cleaned data to a CSV file for future use.</p>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><a href="#tbl-cpi" class="quarto-xref">Table&nbsp;1</a> is extracted from the PDF file in the same way as in <a href="https://zahid.quarto.pub/pdf-table/myR/pdf_tables/">Part 1</a>. But all the data is in one column. One can adjust it as per requirement by some more coding. But we are showing an easy way to extract such data. We shall use first command <code>get_page_dims</code> to get the dimensions of the page and then use <code>area</code> to extract the table.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the table to a CSV file</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(table_separated_df, <span class="st">"table_separated_df.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the table to an Excel file</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(table_separated_df, <span class="st">"table_separated_df.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_page_dims</span>(f1, <span class="at">pages =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 595.32 841.92</code></pre>
+</div>
+</div>
+<p>After getting page dimensions, we can extract the table by specifying the area of the table. One has to do some minor adjustments to get the desired table by specifying four values <code>top</code>, <code>left</code>, <code>bottom</code>, and <code>right</code>.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Data1 <span class="ot">&lt;-</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_tables</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">file  =</span> f1</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    , <span class="at">pages =</span> <span class="dv">8</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    , <span class="at">area  =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">180</span>, <span class="dv">84</span>, <span class="dv">470</span>, <span class="dv">855</span>)) <span class="co"># (top, left, bottom, right)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    , <span class="at">guess =</span> <span class="cn">FALSE</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  ) [[<span class="dv">1</span>]] <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.table</span>()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>Data1 <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>() <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), <span class="at">full_width =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-cpi1" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cpi1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Extracted Table from the PDF with specified area
+</figcaption>
+<div aria-describedby="tbl-cpi1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">...1</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">...2</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">May 24</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">April 24...4</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">May 23...5</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">April 24...6</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">May 23...7</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">April 24...8</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">May 23...9</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">General</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: right;">254.78</td>
+<td style="text-align: right;">263.32</td>
+<td style="text-align: right;">227.96</td>
+<td style="text-align: right;">-3.24</td>
+<td style="text-align: right;">11.76</td>
+<td style="text-align: right;">-3.24</td>
+<td style="text-align: right;">11.76</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Food &amp; Non-alcoholic Bev.</td>
+<td style="text-align: right;">34.58</td>
+<td style="text-align: right;">264.01</td>
+<td style="text-align: right;">286.43</td>
+<td style="text-align: right;">264.45</td>
+<td style="text-align: right;">-7.83</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">-2.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-perishable Food Items</td>
+<td style="text-align: right;">29.60</td>
+<td style="text-align: right;">266.43</td>
+<td style="text-align: right;">282.07</td>
+<td style="text-align: right;">271.20</td>
+<td style="text-align: right;">-5.54</td>
+<td style="text-align: right;">-1.76</td>
+<td style="text-align: right;">-1.76</td>
+<td style="text-align: right;">-0.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Perishable Food Items</td>
+<td style="text-align: right;">4.99</td>
+<td style="text-align: right;">249.59</td>
+<td style="text-align: right;">312.36</td>
+<td style="text-align: right;">224.41</td>
+<td style="text-align: right;">-20.10</td>
+<td style="text-align: right;">11.22</td>
+<td style="text-align: right;">-1.19</td>
+<td style="text-align: right;">0.55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alcoholic Bev. &amp; Tobacco</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">366.68</td>
+<td style="text-align: right;">366.07</td>
+<td style="text-align: right;">356.40</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">2.88</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clothing &amp; Footwear</td>
+<td style="text-align: right;">8.60</td>
+<td style="text-align: right;">239.46</td>
+<td style="text-align: right;">238.38</td>
+<td style="text-align: right;">202.95</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">17.99</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">1.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Housing, Water, Electricity,</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">23.63</td>
+<td style="text-align: right;">236.63</td>
+<td style="text-align: right;">239.81</td>
+<td style="text-align: right;">177.92</td>
+<td style="text-align: right;">-1.33</td>
+<td style="text-align: right;">33.00</td>
+<td style="text-align: right;">-0.29</td>
+<td style="text-align: right;">6.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gas &amp; Fuels</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Furnishing &amp; Household</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">4.10</td>
+<td style="text-align: right;">267.41</td>
+<td style="text-align: right;">266.41</td>
+<td style="text-align: right;">235.09</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">13.75</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.58</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Equipment Maintenance</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Health</td>
+<td style="text-align: right;">2.79</td>
+<td style="text-align: right;">241.17</td>
+<td style="text-align: right;">237.29</td>
+<td style="text-align: right;">201.94</td>
+<td style="text-align: right;">1.63</td>
+<td style="text-align: right;">19.42</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transport</td>
+<td style="text-align: right;">5.91</td>
+<td style="text-align: right;">315.06</td>
+<td style="text-align: right;">320.28</td>
+<td style="text-align: right;">285.36</td>
+<td style="text-align: right;">-1.63</td>
+<td style="text-align: right;">10.41</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communication</td>
+<td style="text-align: right;">2.21</td>
+<td style="text-align: right;">134.27</td>
+<td style="text-align: right;">134.85</td>
+<td style="text-align: right;">118.27</td>
+<td style="text-align: right;">-0.43</td>
+<td style="text-align: right;">13.53</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Recreation &amp; Culture</td>
+<td style="text-align: right;">1.59</td>
+<td style="text-align: right;">262.27</td>
+<td style="text-align: right;">258.77</td>
+<td style="text-align: right;">242.93</td>
+<td style="text-align: right;">1.35</td>
+<td style="text-align: right;">7.96</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;">3.79</td>
+<td style="text-align: right;">199.00</td>
+<td style="text-align: right;">196.20</td>
+<td style="text-align: right;">171.63</td>
+<td style="text-align: right;">1.43</td>
+<td style="text-align: right;">15.95</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Restaurants &amp; Hotels</td>
+<td style="text-align: right;">6.92</td>
+<td style="text-align: right;">267.22</td>
+<td style="text-align: right;">269.38</td>
+<td style="text-align: right;">235.03</td>
+<td style="text-align: right;">-0.80</td>
+<td style="text-align: right;">13.70</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Miscellaneous</td>
+<td style="text-align: right;">4.87</td>
+<td style="text-align: right;">282.79</td>
+<td style="text-align: right;">282.22</td>
+<td style="text-align: right;">246.64</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">14.66</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><a href="#tbl-cpi1" class="quarto-xref">Table&nbsp;2</a> is almost the same as reported in <a href="#fig-cpi" class="quarto-xref">Figure&nbsp;1</a> unlike <a href="#tbl-cpi" class="quarto-xref">Table&nbsp;1</a> which has all data in one column. However, some adjustments are still required. We have first column names with some specific symbols so its names are spread in more than one rows. To remove rows with NAs and adjusting row names, we can do some wrangling.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Data1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">" Group Weight"</span>, <span class="st">"index_may_2024"</span>, <span class="st">"index_apr_2024"</span>, <span class="st">"index_may_2023"</span>, <span class="st">"index_may_2024_mom"</span>, <span class="st">"index_may_2024_yoy"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"impact_apr_2024"</span>, <span class="st">"impact_may_2023"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Data2 <span class="ot">&lt;-</span> Data1 <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(Group) <span class="sc">&amp;</span> <span class="fu">row_number</span>() <span class="sc">==</span> <span class="dv">8</span> <span class="sc">~</span> <span class="st">"Housing, Water, Electricity, Gas &amp; Other"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(Group) <span class="sc">&amp;</span> <span class="fu">row_number</span>() <span class="sc">==</span> <span class="dv">11</span> <span class="sc">~</span> <span class="st">"Furnishing &amp; Household Equip. &amp; Maintenance"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> Group</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Remove rows with missing values</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Data3 <span class="ot">&lt;-</span> Data2 <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Cleaned Data Frame</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>Data3 <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>() <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), <span class="at">full_width =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-cpi2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cpi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Cleaned Data Frame
+</figcaption>
+<div aria-describedby="tbl-cpi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Group</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Group Weight</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">index_may_2024</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">index_apr_2024</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">index_may_2023</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">index_may_2024_mom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">index_may_2024_yoy</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">impact_apr_2024</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">impact_may_2023</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">General</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: right;">254.78</td>
+<td style="text-align: right;">263.32</td>
+<td style="text-align: right;">227.96</td>
+<td style="text-align: right;">-3.24</td>
+<td style="text-align: right;">11.76</td>
+<td style="text-align: right;">-3.24</td>
+<td style="text-align: right;">11.76</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Food &amp; Non-alcoholic Bev.</td>
+<td style="text-align: right;">34.58</td>
+<td style="text-align: right;">264.01</td>
+<td style="text-align: right;">286.43</td>
+<td style="text-align: right;">264.45</td>
+<td style="text-align: right;">-7.83</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">-2.94</td>
+<td style="text-align: right;">-0.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Non-perishable Food Items</td>
+<td style="text-align: right;">29.60</td>
+<td style="text-align: right;">266.43</td>
+<td style="text-align: right;">282.07</td>
+<td style="text-align: right;">271.20</td>
+<td style="text-align: right;">-5.54</td>
+<td style="text-align: right;">-1.76</td>
+<td style="text-align: right;">-1.76</td>
+<td style="text-align: right;">-0.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Perishable Food Items</td>
+<td style="text-align: right;">4.99</td>
+<td style="text-align: right;">249.59</td>
+<td style="text-align: right;">312.36</td>
+<td style="text-align: right;">224.41</td>
+<td style="text-align: right;">-20.10</td>
+<td style="text-align: right;">11.22</td>
+<td style="text-align: right;">-1.19</td>
+<td style="text-align: right;">0.55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alcoholic Bev. &amp; Tobacco</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">366.68</td>
+<td style="text-align: right;">366.07</td>
+<td style="text-align: right;">356.40</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">2.88</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clothing &amp; Footwear</td>
+<td style="text-align: right;">8.60</td>
+<td style="text-align: right;">239.46</td>
+<td style="text-align: right;">238.38</td>
+<td style="text-align: right;">202.95</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">17.99</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">1.38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Housing, Water, Electricity, Gas &amp; Other</td>
+<td style="text-align: right;">23.63</td>
+<td style="text-align: right;">236.63</td>
+<td style="text-align: right;">239.81</td>
+<td style="text-align: right;">177.92</td>
+<td style="text-align: right;">-1.33</td>
+<td style="text-align: right;">33.00</td>
+<td style="text-align: right;">-0.29</td>
+<td style="text-align: right;">6.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Furnishing &amp; Household Equip. &amp; Maintenance</td>
+<td style="text-align: right;">4.10</td>
+<td style="text-align: right;">267.41</td>
+<td style="text-align: right;">266.41</td>
+<td style="text-align: right;">235.09</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">13.75</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Health</td>
+<td style="text-align: right;">2.79</td>
+<td style="text-align: right;">241.17</td>
+<td style="text-align: right;">237.29</td>
+<td style="text-align: right;">201.94</td>
+<td style="text-align: right;">1.63</td>
+<td style="text-align: right;">19.42</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transport</td>
+<td style="text-align: right;">5.91</td>
+<td style="text-align: right;">315.06</td>
+<td style="text-align: right;">320.28</td>
+<td style="text-align: right;">285.36</td>
+<td style="text-align: right;">-1.63</td>
+<td style="text-align: right;">10.41</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communication</td>
+<td style="text-align: right;">2.21</td>
+<td style="text-align: right;">134.27</td>
+<td style="text-align: right;">134.85</td>
+<td style="text-align: right;">118.27</td>
+<td style="text-align: right;">-0.43</td>
+<td style="text-align: right;">13.53</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Recreation &amp; Culture</td>
+<td style="text-align: right;">1.59</td>
+<td style="text-align: right;">262.27</td>
+<td style="text-align: right;">258.77</td>
+<td style="text-align: right;">242.93</td>
+<td style="text-align: right;">1.35</td>
+<td style="text-align: right;">7.96</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;">3.79</td>
+<td style="text-align: right;">199.00</td>
+<td style="text-align: right;">196.20</td>
+<td style="text-align: right;">171.63</td>
+<td style="text-align: right;">1.43</td>
+<td style="text-align: right;">15.95</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Restaurants &amp; Hotels</td>
+<td style="text-align: right;">6.92</td>
+<td style="text-align: right;">267.22</td>
+<td style="text-align: right;">269.38</td>
+<td style="text-align: right;">235.03</td>
+<td style="text-align: right;">-0.80</td>
+<td style="text-align: right;">13.70</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Miscellaneous</td>
+<td style="text-align: right;">4.87</td>
+<td style="text-align: right;">282.79</td>
+<td style="text-align: right;">282.22</td>
+<td style="text-align: right;">246.64</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">14.66</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><a href="#tbl-cpi2" class="quarto-xref">Table&nbsp;3</a> is the cleaned data frame. We have adjusted column names and removed rows with missing values. One can use columns names as per one’s requirement.</p>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>In this post, we demonstrated how to extract tables from PDF files using the <code>tabulapdf</code> package in R. We walked through the steps of loading necessary libraries, extracting tables from PDFs, converting them to data frames, cleaning the data, and finally saving it to a CSV file. This process can be very useful for extracting and analyzing data from PDF reports and documents.</p>
+<section id="saving-the-data-to-a-csv-file-and-excel-file" class="level2">
+<h2 class="anchored" data-anchor-id="saving-the-data-to-a-csv-file-and-excel-file">Saving the Data to a CSV File and Excel File</h2>
+<p>Finally, we can save the cleaned data to a CSV and excel file for future use.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(Data3, <span class="st">"CPI.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(Data3, <span class="st">"CPI.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
 </section>
@@ -1179,7 +1139,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/8edb2e0b-a07c-4a2c-91bf-d5a8c22886a3\.netlify\.app\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

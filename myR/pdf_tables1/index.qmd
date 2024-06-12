@@ -1,0 +1,153 @@
+---
+title: "Extracting Data from PDFs documents using tabulapdf in R"
+subtitle: "Part 2"
+author: "[Muhammad Yaseen](https://myaseen208.com/), [Zahid Asghar](https://zahid.quarto.pub/) "
+date: "2024-06-12"
+categories: [R, PDF, Data Extraction]
+format: 
+  html:
+    toc: true
+    toc-float: true
+    toc_depth: 3
+    code_folding: show
+    number_sections: true
+    highlight-style: dracula
+editor: visual
+execute: 
+  freeze: auto
+  warning: false
+  message: false
+---
+
+## Introduction
+
+In the [part 1](https://zahid.quarto.pub/pdf-table/myR/pdf_tables/) of extracting pdf tables, we discussed how to extract data from PDF files using the `tabulapdf` package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.
+
+We have same libraries as in the first part. 
+
+
+## Required Libraries
+
+I have tried `tabulizer` to install but not successful. I have come across `tabulapdf` package and find it very handy. To begin, we'll need to install and load the necessary libraries. Here is the list of packages we'll be using:
+
+- `rJava`
+- `tabulapdf`
+- `pdftools`
+- `tidyverse`
+
+Let's load these libraries in R.
+
+```{r}
+Sys.setenv(JAVA_HOME = "C:/Program Files/Java/jdk-22") ## One check is for one's system if required for running `rJava`
+library(rJava)
+library(tabulapdf)
+library(pdftools)
+library(tidyverse)
+
+```
+
+## Extracting Tables from a PDF 
+
+
+
+
+
+Now we will extract a table from page 10 from the same PDF file as in part 1. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.
+
+
+```{r}
+
+# URL of the monthly review PDF
+f1 <- "https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf"
+
+```
+
+
+::: {#fig-cpi}
+
+![](cpi8.png)
+
+Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16) 
+::: 
+
+One can see from @fig-cpi that the table we want to extract is on the third page of the PDF. Let's extract the table from the third page of the PDF file.
+
+```{r}
+#| label: tbl-cpi
+#| tbl-cap: Extracted Table from the PDF
+# Extract and view the table from the third page of the PDF
+extract_tables(f1, pages =8 )[[1]] |> kableExtra::kable() |> kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F)
+```
+
+@tbl-cpi is extracted from the PDF file in the same way as in [Part 1](https://zahid.quarto.pub/pdf-table/myR/pdf_tables/). But all the data is in one column. One can adjust it as per requirement by some more coding. But we are showing an easy way to extract such data.
+We shall use first command `get_page_dims` to get the dimensions of the page and then use `area` to extract the table. 
+
+```{r}
+
+get_page_dims(f1, pages = 8)
+```
+
+After getting page dimensions, we can extract the table by specifying the area of the table. One has to do some minor adjustments to get the desired table by specifying four values `top`, `left`, `bottom`, and `right`. 
+
+
+
+
+```{r} 
+#| label: tbl-cpi1
+#| tbl-cap: Extracted Table from the PDF with specified area
+
+library(data.table)
+Data1 <-
+  extract_tables(
+    file  = f1
+    , pages = 8
+    , area  = list(c(180, 84, 470, 855)) # (top, left, bottom, right)
+    , guess = FALSE
+  ) [[1]] %>%
+  as.data.table()
+
+Data1 |> kableExtra::kable() |> kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F) 
+```
+
+@tbl-cpi1 is almost the same as reported in @fig-cpi unlike @tbl-cpi which has all data in one column. However, some adjustments are still required. We have first column names with some specific symbols so its names are spread in more than one rows. To remove rows with NAs and adjusting row names, we can do some wrangling. 
+
+
+```{r wrangling}
+
+colnames(Data1) <- c("Group", " Group Weight", "index_may_2024", "index_apr_2024", "index_may_2023", "index_may_2024_mom", "index_may_2024_yoy",
+                      "impact_apr_2024", "impact_may_2023")
+Data2 <- Data1 %>%
+  mutate(
+    Group = case_when(
+      is.na(Group) & row_number() == 8 ~ "Housing, Water, Electricity, Gas & Other",
+      is.na(Group) & row_number() == 11 ~ "Furnishing & Household Equip. & Maintenance",
+      TRUE ~ Group
+    )
+  )
+```
+
+
+```{r}
+#| label: tbl-cpi2
+#| tbl-cap: Cleaned Data Frame
+
+## Remove rows with missing values
+
+Data3 <- Data2 |> drop_na()
+
+## Cleaned Data Frame
+Data3 |> kableExtra::kable() |> kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F) 
+
+
+```
+
+@tbl-cpi2 is the cleaned data frame. We have adjusted column names and removed rows with missing values. One can use columns names as per one's requirement.
+
+## Saving the Data to a CSV File and Excel File
+
+Finally, we can save the cleaned data to a CSV and excel file for future use.
+
+```{r}
+write.csv(Data3, "CPI.csv", row.names = FALSE)
+writexl::write_xlsx(Data3, "CPI.xlsx")
+```
