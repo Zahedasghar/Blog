@@ -10,6 +10,8 @@
       url: 'https://zahid.quarto.pub/pdf-table'
     - id: 8edb2e0b-a07c-4a2c-91bf-d5a8c22886a3
       url: 'https://zahid.quarto.pub/zahid-asghar'
+    - id: e5709c24-67b6-46e3-9614-6977450152ac
+      url: 'https://zahid.quarto.pub/quarto-update'
   netlify:
     - id: 41570554-fd48-4763-8288-3be5ede5af88
       url: 'https://zahedasghar.netlify.app'

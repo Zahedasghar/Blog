@@ -19,6 +19,8 @@ execute:
   message: false
 ---
 
+![](pdf.webp){width=100%} 
+
 ## Introduction
 
 In the [part 1](https://zahid.quarto.pub/pdf-table/myR/pdf_tables/) of extracting pdf tables, we discussed how to extract data from PDF files using the `tabulapdf` package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.

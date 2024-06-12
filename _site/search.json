@@ -49,27 +49,6 @@
     "text": "While I regularly conduct trainings, occasionally writes in detail about use of data basics using R and deliver seminars. Some of these posts for start learning R are given here.\n\n\n\n\n\n\nTip\n\n\n\nYou can find my github code repository for my codes here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtracting Data from PDFs documents using tabulapdf in R\n\n\nPart 1\n\n\n\n\n\n\n\n\nJun 9, 2024\n\n\nMuhammad Yaseen, Zahid Asghar\n\n\n\n\n\n\n\n\n\n\n\n\nExtracting Data from PDFs documents using tabulapdf in R\n\n\nPart 2\n\n\n\n\n\n\n\n\nJun 12, 2024\n\n\nMuhammad Yaseen, Zahid Asghar\n\n\n\n\n\n\n\n\n\n\n\n\nPakwheels Data analysis\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nZahid Asghar\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "myR/pakwheels/index.html",
-    "href": "myR/pakwheels/index.html",
-    "title": "Pakwheels Data analysis",
-    "section": "",
-    "text": "This post is about learning R.\n\nIn this post I have analysed pakwheels data with tidyverse. Anyone interested in learning basics of data analytics may find it helpful as all necessary details are given in the post. Pakwheels data are downloaded from pakwheels website."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Zahid Asghar",
-    "section": "",
-    "text": "I am Professor at School of Economics, Quaid-i-Azam University, Islamabad. I have extensive background working with applied econometrics, development issues (food security, urban and health) and using advanced analytics to enable data stakeholders to make informed decisions. I have also served as Director, School of Economics, Registrar Quaid-i-Azam University, Islamabad and I am also member of Research Advisory Committee (RAC) of RASTA Competitive Grants Program for Policy-oriented Research.\nI recently expanded my skill set to include topics like Impact Evaluation Tools, Quarto, tidymodels, doing economics with R, and data visualization using animation and interactivity. I am passionate about skills for jobs now and in the future, Virtual learning with new educational accounting system. I am also learning how quantitative reasoning and logic with media , digital and data literacy may help to lead actionable initiatives to spot and call fake/nonsense news."
-  },
-  {
     "objectID": "myR/pdf_tables/index.html#introduction",
     "href": "myR/pdf_tables/index.html#introduction",
     "title": "Extracting Data from PDFs documents using tabulapdf in R",
@@ -133,6 +112,62 @@
     "text": "Conclusion\nIn this post, we demonstrated how to extract tables from PDF files using the tabulapdf package in R. We walked through the steps of loading necessary libraries, extracting tables from PDFs, converting them to data frames, cleaning the data, and finally saving it to a CSV file. This process can be very useful for extracting and analyzing data from PDF reports and documents."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Zahid Asghar",
+    "section": "",
+    "text": "I am Professor at School of Economics, Quaid-i-Azam University, Islamabad. I have extensive background working with applied econometrics, development issues (food security, urban and health) and using advanced analytics to enable data stakeholders to make informed decisions. I have also served as Director, School of Economics, Registrar Quaid-i-Azam University, Islamabad and I am also member of Research Advisory Committee (RAC) of RASTA Competitive Grants Program for Policy-oriented Research.\nI recently expanded my skill set to include topics like Impact Evaluation Tools, Quarto, tidymodels, doing economics with R, and data visualization using animation and interactivity. I am passionate about skills for jobs now and in the future, Virtual learning with new educational accounting system. I am also learning how quantitative reasoning and logic with media , digital and data literacy may help to lead actionable initiatives to spot and call fake/nonsense news."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "myR/pakwheels/index.html",
+    "href": "myR/pakwheels/index.html",
+    "title": "Pakwheels Data analysis",
+    "section": "",
+    "text": "This post is about learning R.\n\nIn this post I have analysed pakwheels data with tidyverse. Anyone interested in learning basics of data analytics may find it helpful as all necessary details are given in the post. Pakwheels data are downloaded from pakwheels website."
+  },
+  {
+    "objectID": "myR/pdf_tables1/index.html",
+    "href": "myR/pdf_tables1/index.html",
+    "title": "Extracting Data from PDFs documents using tabulapdf in R",
+    "section": "",
+    "text": "In the part 1 of extracting pdf tables, we discussed how to extract data from PDF files using the tabulapdf package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.\nWe have same libraries as in the first part."
+  },
+  {
+    "objectID": "myR/pdf_tables1/index.html#introduction",
+    "href": "myR/pdf_tables1/index.html#introduction",
+    "title": "Extracting Data from PDFs documents using tabulapdf in R",
+    "section": "Introduction",
+    "text": "Introduction\nIn the part 1 of extracting pdf tables, we discussed how to extract data from PDF files using the tabulapdf package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.\nWe have same libraries as in the first part."
+  },
+  {
+    "objectID": "myR/pdf_tables1/index.html#required-libraries",
+    "href": "myR/pdf_tables1/index.html#required-libraries",
+    "title": "Extracting Data from PDFs documents using tabulapdf in R",
+    "section": "Required Libraries",
+    "text": "Required Libraries\nI have tried tabulizer to install but not successful. I have come across tabulapdf package and find it very handy. To begin, we’ll need to install and load the necessary libraries. Here is the list of packages we’ll be using:\n\nrJava\ntabulapdf\npdftools\ntidyverse\n\nLet’s load these libraries in R.\n\n\nCode\nSys.setenv(JAVA_HOME = \"C:/Program Files/Java/jdk-22\") ## One check is for one's system if required for running `rJava`\nlibrary(rJava)\nlibrary(tabulapdf)\nlibrary(pdftools)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "myR/pdf_tables1/index.html#extracting-tables-from-a-pdf",
+    "href": "myR/pdf_tables1/index.html#extracting-tables-from-a-pdf",
+    "title": "Extracting Data from PDFs documents using tabulapdf in R",
+    "section": "Extracting Tables from a PDF",
+    "text": "Extracting Tables from a PDF\nNow we will extract a table from page 10 from the same PDF file as in part 1. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.\n\n\nCode\n# URL of the monthly review PDF\nf1 &lt;- \"https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf\"\n\n\n\n\n\n\n\n\nFigure 1: Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16)\n\n\n\nOne can see from Figure 1 that the table we want to extract is on the third page of the PDF. Let’s extract the table from the third page of the PDF file.\n\n\nCode\n# Extract and view the table from the third page of the PDF\nextract_tables(f1, pages =8 )[[1]] |&gt; kableExtra::kable() |&gt; kableExtra::kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), full_width = F)\n\n\n\n\nTable 1: Extracted Table from the PDF\n\n\n\n\n\n\n\n\nTable 1: Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16)\n\n\n\n\n% Change Impact\n\n\nGroup Indices May 2024 (In % points)\n\n\nGroup Weight Over May 2024 Over\n\n\nNo (%)\n\n\nMay 24 April 24 May 23 April 24 May 23 April 24 May 23\n\n\nGeneral 100.00 254.78 263.32 227.96 -3.24 11.76 -3.24 11.76\n\n\n1. Food & Non-alcoholic Bev. 34.58 264.01 286.43 264.45 -7.83 -0.17 -2.94 -0.07\n\n\nNon-perishable Food Items 29.60 266.43 282.07 271.20 -5.54 -1.76 -1.76 -0.62\n\n\nPerishable Food Items 4.99 249.59 312.36 224.41 -20.10 11.22 -1.19 0.55\n\n\n2. Alcoholic Bev. & Tobacco 1.02 366.68 366.07 356.40 0.17 2.88 0.00 0.05\n\n\n3. Clothing & Footwear 8.60 239.46 238.38 202.95 0.46 17.99 0.04 1.38\n\n\nHousing, Water, Electricity,\n\n\n4. 23.63 236.63 239.81 177.92 -1.33 33.00 -0.29 6.08\n\n\nGas & Fuels\n\n\nFurnishing & Household\n\n\n5. 4.10 267.41 266.41 235.09 0.37 13.75 0.02 0.58\n\n\nEquipment Maintenance\n\n\n6. Health 2.79 241.17 237.29 201.94 1.63 19.42 0.04 0.48\n\n\n7. Transport 5.91 315.06 320.28 285.36 -1.63 10.41 -0.12 0.77\n\n\n8. Communication 2.21 134.27 134.85 118.27 -0.43 13.53 0.00 0.16\n\n\n9. Recreation & Culture 1.59 262.27 258.77 242.93 1.35 7.96 0.02 0.13\n\n\n10. Education 3.79 199.00 196.20 171.63 1.43 15.95 0.04 0.45\n\n\n11. Restaurants & Hotels 6.92 267.22 269.38 235.03 -0.80 13.70 -0.06 0.98\n\n\n12. Miscellaneous 4.87 282.79 282.22 246.64 0.20 14.66 0.01 0.77\n\n\n\n\n\n\n\n\n\n\n\n\nTable 1 is extracted from the PDF file in the same way as in Part 1. But all the data is in one column. One can adjust it as per requirement by some more coding. But we are showing an easy way to extract such data. We shall use first command get_page_dims to get the dimensions of the page and then use area to extract the table.\n\n\nCode\nget_page_dims(f1, pages = 8)\n\n\n[[1]]\n[1] 595.32 841.92\n\n\nAfter getting page dimensions, we can extract the table by specifying the area of the table. One has to do some minor adjustments to get the desired table by specifying four values top, left, bottom, and right.\n\n\nCode\nlibrary(data.table)\nData1 &lt;-\n  extract_tables(\n    file  = f1\n    , pages = 8\n    , area  = list(c(180, 84, 470, 855)) # (top, left, bottom, right)\n    , guess = FALSE\n  ) [[1]] %&gt;%\n  as.data.table()\n\nData1 |&gt; kableExtra::kable() |&gt; kableExtra::kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), full_width = F) \n\n\n\n\nTable 2: Extracted Table from the PDF with specified area\n\n\n\n\n\n\n\n\n...1\n...2\nMay 24\nApril 24...4\nMay 23...5\nApril 24...6\nMay 23...7\nApril 24...8\nMay 23...9\n\n\n\n\nGeneral\n100.00\n254.78\n263.32\n227.96\n-3.24\n11.76\n-3.24\n11.76\n\n\nFood & Non-alcoholic Bev.\n34.58\n264.01\n286.43\n264.45\n-7.83\n-0.17\n-2.94\n-0.07\n\n\nNon-perishable Food Items\n29.60\n266.43\n282.07\n271.20\n-5.54\n-1.76\n-1.76\n-0.62\n\n\nPerishable Food Items\n4.99\n249.59\n312.36\n224.41\n-20.10\n11.22\n-1.19\n0.55\n\n\nAlcoholic Bev. & Tobacco\n1.02\n366.68\n366.07\n356.40\n0.17\n2.88\n0.00\n0.05\n\n\nClothing & Footwear\n8.60\n239.46\n238.38\n202.95\n0.46\n17.99\n0.04\n1.38\n\n\nHousing, Water, Electricity,\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nNA\n23.63\n236.63\n239.81\n177.92\n-1.33\n33.00\n-0.29\n6.08\n\n\nGas & Fuels\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nFurnishing & Household\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nNA\n4.10\n267.41\n266.41\n235.09\n0.37\n13.75\n0.02\n0.58\n\n\nEquipment Maintenance\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nHealth\n2.79\n241.17\n237.29\n201.94\n1.63\n19.42\n0.04\n0.48\n\n\nTransport\n5.91\n315.06\n320.28\n285.36\n-1.63\n10.41\n-0.12\n0.77\n\n\nCommunication\n2.21\n134.27\n134.85\n118.27\n-0.43\n13.53\n0.00\n0.16\n\n\nRecreation & Culture\n1.59\n262.27\n258.77\n242.93\n1.35\n7.96\n0.02\n0.13\n\n\nEducation\n3.79\n199.00\n196.20\n171.63\n1.43\n15.95\n0.04\n0.45\n\n\nRestaurants & Hotels\n6.92\n267.22\n269.38\n235.03\n-0.80\n13.70\n-0.06\n0.98\n\n\nMiscellaneous\n4.87\n282.79\n282.22\n246.64\n0.20\n14.66\n0.01\n0.77\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2 is almost the same as reported in Figure 1 unlike Table 1 which has all data in one column. However, some adjustments are still required. We have first column names with some specific symbols so its names are spread in more than one rows. To remove rows with NAs and adjusting row names, we can do some wrangling.\n\n\nCode\ncolnames(Data1) &lt;- c(\"Group\", \" Group Weight\", \"index_may_2024\", \"index_apr_2024\", \"index_may_2023\", \"index_may_2024_mom\", \"index_may_2024_yoy\",\n                      \"impact_apr_2024\", \"impact_may_2023\")\nData2 &lt;- Data1 %&gt;%\n  mutate(\n    Group = case_when(\n      is.na(Group) & row_number() == 8 ~ \"Housing, Water, Electricity, Gas & Other\",\n      is.na(Group) & row_number() == 11 ~ \"Furnishing & Household Equip. & Maintenance\",\n      TRUE ~ Group\n    )\n  )\n\n\n\n\nCode\n## Remove rows with missing values\n\nData3 &lt;- Data2 |&gt; drop_na()\n\n## Cleaned Data Frame\nData3 |&gt; kableExtra::kable() |&gt; kableExtra::kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), full_width = F) \n\n\n\n\nTable 3: Cleaned Data Frame\n\n\n\n\n\n\n\n\nGroup\nGroup Weight\nindex_may_2024\nindex_apr_2024\nindex_may_2023\nindex_may_2024_mom\nindex_may_2024_yoy\nimpact_apr_2024\nimpact_may_2023\n\n\n\n\nGeneral\n100.00\n254.78\n263.32\n227.96\n-3.24\n11.76\n-3.24\n11.76\n\n\nFood & Non-alcoholic Bev.\n34.58\n264.01\n286.43\n264.45\n-7.83\n-0.17\n-2.94\n-0.07\n\n\nNon-perishable Food Items\n29.60\n266.43\n282.07\n271.20\n-5.54\n-1.76\n-1.76\n-0.62\n\n\nPerishable Food Items\n4.99\n249.59\n312.36\n224.41\n-20.10\n11.22\n-1.19\n0.55\n\n\nAlcoholic Bev. & Tobacco\n1.02\n366.68\n366.07\n356.40\n0.17\n2.88\n0.00\n0.05\n\n\nClothing & Footwear\n8.60\n239.46\n238.38\n202.95\n0.46\n17.99\n0.04\n1.38\n\n\nHousing, Water, Electricity, Gas & Other\n23.63\n236.63\n239.81\n177.92\n-1.33\n33.00\n-0.29\n6.08\n\n\nFurnishing & Household Equip. & Maintenance\n4.10\n267.41\n266.41\n235.09\n0.37\n13.75\n0.02\n0.58\n\n\nHealth\n2.79\n241.17\n237.29\n201.94\n1.63\n19.42\n0.04\n0.48\n\n\nTransport\n5.91\n315.06\n320.28\n285.36\n-1.63\n10.41\n-0.12\n0.77\n\n\nCommunication\n2.21\n134.27\n134.85\n118.27\n-0.43\n13.53\n0.00\n0.16\n\n\nRecreation & Culture\n1.59\n262.27\n258.77\n242.93\n1.35\n7.96\n0.02\n0.13\n\n\nEducation\n3.79\n199.00\n196.20\n171.63\n1.43\n15.95\n0.04\n0.45\n\n\nRestaurants & Hotels\n6.92\n267.22\n269.38\n235.03\n-0.80\n13.70\n-0.06\n0.98\n\n\nMiscellaneous\n4.87\n282.79\n282.22\n246.64\n0.20\n14.66\n0.01\n0.77\n\n\n\n\n\n\n\n\n\n\n\n\nTable 3 is the cleaned data frame. We have adjusted column names and removed rows with missing values. One can use columns names as per one’s requirement."
+  },
+  {
+    "objectID": "myR/pdf_tables1/index.html#saving-the-data-to-a-csv-file-and-excel-file",
+    "href": "myR/pdf_tables1/index.html#saving-the-data-to-a-csv-file-and-excel-file",
+    "title": "Extracting Data from PDFs documents using tabulapdf in R",
+    "section": "Saving the Data to a CSV File and Excel File",
+    "text": "Saving the Data to a CSV File and Excel File\nFinally, we can save the cleaned data to a CSV and excel file for future use.\n\n\nCode\nwrite.csv(Data3, \"CPI.csv\", row.names = FALSE)\nwritexl::write_xlsx(Data3, \"CPI.xlsx\")"
+  },
+  {
     "objectID": "posts/AI NEEDS YOU by Verity Herding/index.html",
     "href": "posts/AI NEEDS YOU by Verity Herding/index.html",
     "title": "AI NEEDS YOU: A THOUGHT-PROVOKING EXPLORATION OF ARTIFICIAL INTELLIGENCE",
@@ -194,40 +229,5 @@
     "title": "Teaching",
     "section": "",
     "text": "Inferential Statistics\nQuantitative Methods for Development Economics\nEconometrics 2022"
-  },
-  {
-    "objectID": "myR/pdf_tables1/index.html",
-    "href": "myR/pdf_tables1/index.html",
-    "title": "Extracting Data from PDFs documents using tabulapdf in R",
-    "section": "",
-    "text": "In the part 1 of extracting pdf tables, we discussed how to extract data from PDF files using the tabulapdf package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.\nWe have same libraries as in the first part."
-  },
-  {
-    "objectID": "myR/pdf_tables1/index.html#introduction",
-    "href": "myR/pdf_tables1/index.html#introduction",
-    "title": "Extracting Data from PDFs documents using tabulapdf in R",
-    "section": "",
-    "text": "In the part 1 of extracting pdf tables, we discussed how to extract data from PDF files using the tabulapdf package in R. In this part, we will explore little more for extracting data from PDFs. We will also discuss how to handle more complex tables and extract data from PDFs.\nWe have same libraries as in the first part."
-  },
-  {
-    "objectID": "myR/pdf_tables1/index.html#required-libraries",
-    "href": "myR/pdf_tables1/index.html#required-libraries",
-    "title": "Extracting Data from PDFs documents using tabulapdf in R",
-    "section": "Required Libraries",
-    "text": "Required Libraries\nI have tried tabulizer to install but not successful. I have come across tabulapdf package and find it very handy. To begin, we’ll need to install and load the necessary libraries. Here is the list of packages we’ll be using:\n\nrJava\ntabulapdf\npdftools\ntidyverse\n\nLet’s load these libraries in R.\n\n\nCode\nSys.setenv(JAVA_HOME = \"C:/Program Files/Java/jdk-22\") ## One check is for one's system if required for running `rJava`\nlibrary(rJava)\nlibrary(tabulapdf)\nlibrary(pdftools)\nlibrary(tidyverse)"
-  },
-  {
-    "objectID": "myR/pdf_tables1/index.html#extracting-tables-from-a-pdf",
-    "href": "myR/pdf_tables1/index.html#extracting-tables-from-a-pdf",
-    "title": "Extracting Data from PDFs documents using tabulapdf in R",
-    "section": "Extracting Tables from a PDF",
-    "text": "Extracting Tables from a PDF\nNow we will extract a table from page 10 from the same PDF file as in part 1. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.\n\n\nCode\n# URL of the monthly review PDF\nf1 &lt;- \"https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf\"\n\n\n\n\n\n\n\n\nFigure 1: Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16)\n\n\n\nOne can see from Figure 1 that the table we want to extract is on the third page of the PDF. Let’s extract the table from the third page of the PDF file.\n\n\nCode\n# Extract and view the table from the third page of the PDF\nextract_tables(f1, pages =8 )[[1]] |&gt; kableExtra::kable() |&gt; kableExtra::kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), full_width = F)\n\n\n\n\nTable 1: Extracted Table from the PDF\n\n\n\n\n\n\n\n\nTable 1: Consumer Price Index (National) by Group of Commodities and Services (Base 2015-16)\n\n\n\n\n% Change Impact\n\n\nGroup Indices May 2024 (In % points)\n\n\nGroup Weight Over May 2024 Over\n\n\nNo (%)\n\n\nMay 24 April 24 May 23 April 24 May 23 April 24 May 23\n\n\nGeneral 100.00 254.78 263.32 227.96 -3.24 11.76 -3.24 11.76\n\n\n1. Food & Non-alcoholic Bev. 34.58 264.01 286.43 264.45 -7.83 -0.17 -2.94 -0.07\n\n\nNon-perishable Food Items 29.60 266.43 282.07 271.20 -5.54 -1.76 -1.76 -0.62\n\n\nPerishable Food Items 4.99 249.59 312.36 224.41 -20.10 11.22 -1.19 0.55\n\n\n2. Alcoholic Bev. & Tobacco 1.02 366.68 366.07 356.40 0.17 2.88 0.00 0.05\n\n\n3. Clothing & Footwear 8.60 239.46 238.38 202.95 0.46 17.99 0.04 1.38\n\n\nHousing, Water, Electricity,\n\n\n4. 23.63 236.63 239.81 177.92 -1.33 33.00 -0.29 6.08\n\n\nGas & Fuels\n\n\nFurnishing & Household\n\n\n5. 4.10 267.41 266.41 235.09 0.37 13.75 0.02 0.58\n\n\nEquipment Maintenance\n\n\n6. Health 2.79 241.17 237.29 201.94 1.63 19.42 0.04 0.48\n\n\n7. Transport 5.91 315.06 320.28 285.36 -1.63 10.41 -0.12 0.77\n\n\n8. Communication 2.21 134.27 134.85 118.27 -0.43 13.53 0.00 0.16\n\n\n9. Recreation & Culture 1.59 262.27 258.77 242.93 1.35 7.96 0.02 0.13\n\n\n10. Education 3.79 199.00 196.20 171.63 1.43 15.95 0.04 0.45\n\n\n11. Restaurants & Hotels 6.92 267.22 269.38 235.03 -0.80 13.70 -0.06 0.98\n\n\n12. Miscellaneous 4.87 282.79 282.22 246.64 0.20 14.66 0.01 0.77\n\n\n\n\n\n\n\n\n\n\n\n\nTable 1 is extracted from the PDF file in the same way as in Part 1. But all the data is in one column. One can adjust it as per requirement by some more coding. But we are showing an easy way to extract such data. We shall use first command get_page_dims to get the dimensions of the page and then use area to extract the table.\n\n\nCode\nget_page_dims(f1, pages = 8)\n\n\n[[1]]\n[1] 595.32 841.92\n\n\nAfter getting page dimensions, we can extract the table by specifying the area of the table. One has to do some minor adjustments to get the desired table by specifying four values top, left, bottom, and right.\n\n\nCode\nlibrary(data.table)\nData1 &lt;-\n  extract_tables(\n    file  = f1\n    , pages = 8\n    , area  = list(c(180, 84, 470, 855)) # (top, left, bottom, right)\n    , guess = FALSE\n  ) [[1]] %&gt;%\n  as.data.table()\n\nData1 |&gt; kableExtra::kable() |&gt; kableExtra::kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), full_width = F) \n\n\n\n\nTable 2: Extracted Table from the PDF with specified area\n\n\n\n\n\n\n\n\n...1\n...2\nMay 24\nApril 24...4\nMay 23...5\nApril 24...6\nMay 23...7\nApril 24...8\nMay 23...9\n\n\n\n\nGeneral\n100.00\n254.78\n263.32\n227.96\n-3.24\n11.76\n-3.24\n11.76\n\n\nFood & Non-alcoholic Bev.\n34.58\n264.01\n286.43\n264.45\n-7.83\n-0.17\n-2.94\n-0.07\n\n\nNon-perishable Food Items\n29.60\n266.43\n282.07\n271.20\n-5.54\n-1.76\n-1.76\n-0.62\n\n\nPerishable Food Items\n4.99\n249.59\n312.36\n224.41\n-20.10\n11.22\n-1.19\n0.55\n\n\nAlcoholic Bev. & Tobacco\n1.02\n366.68\n366.07\n356.40\n0.17\n2.88\n0.00\n0.05\n\n\nClothing & Footwear\n8.60\n239.46\n238.38\n202.95\n0.46\n17.99\n0.04\n1.38\n\n\nHousing, Water, Electricity,\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nNA\n23.63\n236.63\n239.81\n177.92\n-1.33\n33.00\n-0.29\n6.08\n\n\nGas & Fuels\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nFurnishing & Household\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nNA\n4.10\n267.41\n266.41\n235.09\n0.37\n13.75\n0.02\n0.58\n\n\nEquipment Maintenance\nNA\nNA\nNA\nNA\nNA\nNA\nNA\nNA\n\n\nHealth\n2.79\n241.17\n237.29\n201.94\n1.63\n19.42\n0.04\n0.48\n\n\nTransport\n5.91\n315.06\n320.28\n285.36\n-1.63\n10.41\n-0.12\n0.77\n\n\nCommunication\n2.21\n134.27\n134.85\n118.27\n-0.43\n13.53\n0.00\n0.16\n\n\nRecreation & Culture\n1.59\n262.27\n258.77\n242.93\n1.35\n7.96\n0.02\n0.13\n\n\nEducation\n3.79\n199.00\n196.20\n171.63\n1.43\n15.95\n0.04\n0.45\n\n\nRestaurants & Hotels\n6.92\n267.22\n269.38\n235.03\n-0.80\n13.70\n-0.06\n0.98\n\n\nMiscellaneous\n4.87\n282.79\n282.22\n246.64\n0.20\n14.66\n0.01\n0.77\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2 is almost the same as reported in Figure 1 unlike Table 1 which has all data in one column. However, some adjustments are still required. We have first column names with some specific symbols so its names are spread in more than one rows. To remove rows with NAs and adjusting row names, we can do some wrangling.\n\n\nCode\ncolnames(Data1) &lt;- c(\"Group\", \" Group Weight\", \"index_may_2024\", \"index_apr_2024\", \"index_may_2023\", \"index_may_2024_mom\", \"index_may_2024_yoy\",\n                      \"impact_apr_2024\", \"impact_may_2023\")\nData2 &lt;- Data1 %&gt;%\n  mutate(\n    Group = case_when(\n      is.na(Group) & row_number() == 8 ~ \"Housing, Water, Electricity, Gas & Other\",\n      is.na(Group) & row_number() == 11 ~ \"Furnishing & Household Equip. & Maintenance\",\n      TRUE ~ Group\n    )\n  )\n\n\n\n\nCode\n## Remove rows with missing values\n\nData3 &lt;- Data2 |&gt; drop_na()\n\n## Cleaned Data Frame\nData3 |&gt; kableExtra::kable() |&gt; kableExtra::kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), full_width = F) \n\n\n\n\nTable 3: Cleaned Data Frame\n\n\n\n\n\n\n\n\nGroup\nGroup Weight\nindex_may_2024\nindex_apr_2024\nindex_may_2023\nindex_may_2024_mom\nindex_may_2024_yoy\nimpact_apr_2024\nimpact_may_2023\n\n\n\n\nGeneral\n100.00\n254.78\n263.32\n227.96\n-3.24\n11.76\n-3.24\n11.76\n\n\nFood & Non-alcoholic Bev.\n34.58\n264.01\n286.43\n264.45\n-7.83\n-0.17\n-2.94\n-0.07\n\n\nNon-perishable Food Items\n29.60\n266.43\n282.07\n271.20\n-5.54\n-1.76\n-1.76\n-0.62\n\n\nPerishable Food Items\n4.99\n249.59\n312.36\n224.41\n-20.10\n11.22\n-1.19\n0.55\n\n\nAlcoholic Bev. & Tobacco\n1.02\n366.68\n366.07\n356.40\n0.17\n2.88\n0.00\n0.05\n\n\nClothing & Footwear\n8.60\n239.46\n238.38\n202.95\n0.46\n17.99\n0.04\n1.38\n\n\nHousing, Water, Electricity, Gas & Other\n23.63\n236.63\n239.81\n177.92\n-1.33\n33.00\n-0.29\n6.08\n\n\nFurnishing & Household Equip. & Maintenance\n4.10\n267.41\n266.41\n235.09\n0.37\n13.75\n0.02\n0.58\n\n\nHealth\n2.79\n241.17\n237.29\n201.94\n1.63\n19.42\n0.04\n0.48\n\n\nTransport\n5.91\n315.06\n320.28\n285.36\n-1.63\n10.41\n-0.12\n0.77\n\n\nCommunication\n2.21\n134.27\n134.85\n118.27\n-0.43\n13.53\n0.00\n0.16\n\n\nRecreation & Culture\n1.59\n262.27\n258.77\n242.93\n1.35\n7.96\n0.02\n0.13\n\n\nEducation\n3.79\n199.00\n196.20\n171.63\n1.43\n15.95\n0.04\n0.45\n\n\nRestaurants & Hotels\n6.92\n267.22\n269.38\n235.03\n-0.80\n13.70\n-0.06\n0.98\n\n\nMiscellaneous\n4.87\n282.79\n282.22\n246.64\n0.20\n14.66\n0.01\n0.77\n\n\n\n\n\n\n\n\n\n\n\n\nTable 3 is the cleaned data frame. We have adjusted column names and removed rows with missing values. One can use columns names as per one’s requirement."
-  },
-  {
-    "objectID": "myR/pdf_tables1/index.html#saving-the-data-to-a-csv-file-and-excel-file",
-    "href": "myR/pdf_tables1/index.html#saving-the-data-to-a-csv-file-and-excel-file",
-    "title": "Extracting Data from PDFs documents using tabulapdf in R",
-    "section": "Saving the Data to a CSV File and Excel File",
-    "text": "Saving the Data to a CSV File and Excel File\nFinally, we can save the cleaned data to a CSV and excel file for future use.\n\n\nCode\nwrite.csv(Data3, \"CPI.csv\", row.names = FALSE)\nwritexl::write_xlsx(Data3, \"CPI.xlsx\")"
   }
 ]
