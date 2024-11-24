@@ -1,0 +1,10 @@
+---
+title: "Propensity Score Matching for Causal Inference"
+author: "Zahid Asghar"
+date: "2024-04-02"
+categories: [analysis]
+---
+
+# PSM methods including entropic balancing for causal inference
+
+Causal inference is a critical aspect of research in fields such as economics, public health, and social sciences. One of the primary challenges in causal inference is estimating the effect of a treatment or intervention on an outcome variable while accounting for potential confounding variables. Conducting Randomized Controlled Trials (RCTs) is considered the gold standard for estimating causal effects. However, in many cases, researchers rely on observational data, where treatment assignment is not random, leading to potential bias in the estimated treatment effect. Propensity score matching is a widely used method to address this issue by balancing covariates between treatment and control groups, thereby reducing bias and improving the validity of causal inference. Propensity score matching (PSM) is a statistical technique designed to address this challenge by accounting for covariates that predict receiving the treatment, making it particularly useful in observational studies where random assignment is not feasible. In this tutorial, I will demonstrate how to perform propensity score matching using various methods in R, highlight the advantages of entropic balancing, and provide a step-by-step guide to assessing balance diagnostics and estimating treatment effects with matched data. This comprehensive guide aims to equip researchers with the necessary tools to conduct robust causal inference using observational data. [Click here to read more](https://zahid.quarto.pub/propensity-score-matching-methods-for-causal-inference/)

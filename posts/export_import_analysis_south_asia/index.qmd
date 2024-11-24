@@ -1,0 +1,10 @@
+---
+title: "Export and Import Trends in South Asia: A Comparative Analysis"
+author: "Zahid Asghar"
+date: "2024-07-02"
+categories: [analysis]
+---
+
+# Export and Import Trends in South Asia: A Comparative Analysis
+In this post, I will examine India, Pakistan, Sri Lanka, and Bangladesh exports and imports from 1980 to 2023. Exports are a crucial indicator of a country’s competitiveness in the global market, while imports reflect the level of consumption and dependence on foreign goods and services. A healthy economy often features high exports supporting its imports, signifying robust economic growth. Additionally, I will include an analysis of exports per capita, which provides a more granular view of economic performance by reflecting the average export value per person. I will also delve into how Pakistan's performance in terms of exports and imports as a percentage of GDP and exports per capita compared to that of India, Sri Lanka, and Bangladesh.
+ [Click here to read more](https://zahid.quarto.pub/trade-south-asia/)

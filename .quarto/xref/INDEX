@@ -61,5 +61,17 @@
   },
   "myR/pdf_tables1/index.qmd": {
     "index.html": "c35b26e9"
+  },
+  "posts/data-government analytics/index.qmd": {
+    "index.html": "bef90d10"
+  },
+  "posts/data_science_subcontinent/index.qmd": {
+    "index.html": "63cdde75"
+  },
+  "posts/export_import_analysis_south_asia/index.qmd": {
+    "index.html": "41667f41"
+  },
+  "posts/propensity_score_matching/index.qmd": {
+    "index.html": "66174671"
   }
 }

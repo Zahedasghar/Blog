@@ -1,0 +1,11 @@
+---
+title: "Spicing Up Data Science: A Delicious Blend of Analytics and Gourmet Delights"
+subtile: "Exploratory Data Analysis of Indian Food 101 Dataset"
+author: "Zahid Asghar"
+date: "2024-07-28"
+categories: [analysis]
+---
+
+# Basics of data science with food 101 dataset
+
+In this analysis, we used the Indian Food 101 dataset from Kaggle (Prabhavalkar 2023).I will this data rathat I call it subcontinent Food dataset, using from very basics of data handling, analysis, and visualization techniques with R and the Tidyverse suite. The dataset contains information about various Indian dishes, their ingredients, dietary preferences, and preparation times. We will explore the dataset to understand the distribution of dishes by course, flavor profile, and diet type. We will also analyze the preparation and cooking times of the dishes and identify the most common ingredients used in Indian cuisine. [Click here to read more](https://zahid.quarto.pub/spicing-up-data-science/)

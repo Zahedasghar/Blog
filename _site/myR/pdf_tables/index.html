@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.29">
-
+<meta name="generator" content="quarto-1.6.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Muhammad Yaseen, Zahid Asghar">
 <meta name="dcterms.date" content="2024-06-09">
-
-<title>Zahid Asghar – Extracting Data from PDFs documents using tabulapdf in R</title>
+<title>Extracting Data from PDFs documents using tabulapdf in R – Zahid Asghar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +32,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,7 +55,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -72,13 +68,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-60d0bd63fa9a66273e8d0c781d1550f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-60d0bd63fa9a66273e8d0c781d1550f0.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-bc5614be6b98c37e89b4aac2643f2060.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-1a0a88482db7795fa6aa289b9d1f5d4b.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -103,30 +98,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../../styles.css">
+}</script><link rel="stylesheet" href="../../styles.css">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Zahid Asghar</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
@@ -147,8 +136,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="hhttps://youtube.com/zahidasghar"> <i class="bi bi-youtube" role="img" aria-label="Quarto Youtube-channel">
 </i> 
 <span class="menu-text"></span></a>
@@ -169,16 +158,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Extracting Data from PDFs documents using tabulapdf in R</h1>
             <p class="subtitle lead">Part 1</p>
@@ -215,11 +200,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#importance-of-extracting-data-from-pdfs" id="toc-importance-of-extracting-data-from-pdfs" class="nav-link" data-scroll-target="#importance-of-extracting-data-from-pdfs">Importance of Extracting Data from PDFs</a></li>
   <li><a href="#required-libraries" id="toc-required-libraries" class="nav-link" data-scroll-target="#required-libraries">Required Libraries</a></li>
   <li><a href="#extracting-tables-from-a-pdf" id="toc-extracting-tables-from-a-pdf" class="nav-link" data-scroll-target="#extracting-tables-from-a-pdf">Extracting Tables from a PDF</a></li>
@@ -228,36 +212,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#cleaned-data-frame" id="toc-cleaned-data-frame" class="nav-link" data-scroll-target="#cleaned-data-frame">Cleaned Data Frame</a></li>
   <li><a href="#saving-the-data-to-a-csv-file-and-excel-file" id="toc-saving-the-data-to-a-csv-file-and-excel-file" class="nav-link" data-scroll-target="#saving-the-data-to-a-csv-file-and-excel-file">Saving the Data to a CSV File and Excel File</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
-
-
-<p><img src="pdf.webp" class="img-fluid" style="width:100.0%"></p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p><img src="pdf.webp" class="img-fluid" style="width:100.0%"></p>
+<section id="introduction" class="level2"><h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this blog post, we will explore how to extract data from PDF files using the <code>tabulapdf</code> package in R. PDF is a common file format for sharing data, but extracting structured data from PDFs can be challenging. The <code>tabulapdf</code> package provides an easy way to extract tables from PDFs and convert them into a usable format.</p>
-</section>
-<section id="importance-of-extracting-data-from-pdfs" class="level2">
-<h2 class="anchored" data-anchor-id="importance-of-extracting-data-from-pdfs">Importance of Extracting Data from PDFs</h2>
+</section><section id="importance-of-extracting-data-from-pdfs" class="level2"><h2 class="anchored" data-anchor-id="importance-of-extracting-data-from-pdfs">Importance of Extracting Data from PDFs</h2>
 <p>Extracting tables from PDF files is crucial for several reasons:</p>
 <ol type="1">
-<li><strong>Data Accessibility</strong>: Many important documents and reports are shared in PDF format. Extracting data from these documents makes it accessible for analysis and further use.</li>
-<li><strong>Automated Data Processing</strong>: Manual data entry from PDFs is time-consuming and prone to errors. Automated extraction ensures accuracy and efficiency.</li>
-<li><strong>Data Integration</strong>: Extracting data from PDFs allows for the integration of information from various sources, enhancing the comprehensiveness of data analysis.</li>
-<li><strong>Historical Data Analysis</strong>: Many historical documents are available only in PDF format. Extracting data from these PDFs allows for the analysis of trends over time.</li>
-<li><strong>Enhanced Decision Making</strong>: Having access to data in an analyzable format helps in making informed decisions based on comprehensive data analysis.</li>
+<li>
+<strong>Data Accessibility</strong>: Many important documents and reports are shared in PDF format. Extracting data from these documents makes it accessible for analysis and further use.</li>
+<li>
+<strong>Automated Data Processing</strong>: Manual data entry from PDFs is time-consuming and prone to errors. Automated extraction ensures accuracy and efficiency.</li>
+<li>
+<strong>Data Integration</strong>: Extracting data from PDFs allows for the integration of information from various sources, enhancing the comprehensiveness of data analysis.</li>
+<li>
+<strong>Historical Data Analysis</strong>: Many historical documents are available only in PDF format. Extracting data from these PDFs allows for the analysis of trends over time.</li>
+<li>
+<strong>Enhanced Decision Making</strong>: Having access to data in an analyzable format helps in making informed decisions based on comprehensive data analysis.</li>
 </ol>
 <p>So extracting tables from PDFs is a critical skill that enables access to important data, ensures accuracy, and saves time in data processing.We can automate the process and make the data extraction workflow more efficient. This not only improves productivity but also ensures that the data extracted is accurate and reliable, providing a solid foundation for any subsequent analysis or decision-making processes.</p>
 <p>Given these reasons, it’s evident why efficient tools for extracting data from PDFs are invaluable. So lets learn how to extract data from PDFs using the <code>tabulapdf</code> package in R.</p>
-</section>
-<section id="required-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="required-libraries">Required Libraries</h2>
+</section><section id="required-libraries" class="level2"><h2 class="anchored" data-anchor-id="required-libraries">Required Libraries</h2>
 <p>I have tried <code>tabulizer</code> to install but not successful. I have come across <code>tabulapdf</code> package and find it very handy. To begin, we’ll need to install and load the necessary libraries. Here is the list of packages we’ll be using:</p>
 <ul>
 <li><code>rJava</code></li>
@@ -267,31 +244,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Let’s load these libraries in R.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">JAVA_HOME =</span> <span class="st">"C:/Program Files/Java/jdk-22"</span>) <span class="do">## One check is for one's system if required for running `rJava`</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rJava)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tabulapdf)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>JAVA_HOME <span class="op">=</span> <span class="st">"C:/Program Files/Java/jdk-22"</span><span class="op">)</span> <span class="co">## One check is for one's system if required for running `rJava`</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.rforge.net/rJava/">rJava</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/tabulapdf/">tabulapdf</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/pdftools/">pdftools</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="extracting-tables-from-a-pdf" class="level2">
-<h2 class="anchored" data-anchor-id="extracting-tables-from-a-pdf">Extracting Tables from a PDF</h2>
+</section><section id="extracting-tables-from-a-pdf" class="level2"><h2 class="anchored" data-anchor-id="extracting-tables-from-a-pdf">Extracting Tables from a PDF</h2>
 <p>The <code>extract_tables</code> function extracts tables from the specified page of the PDF file. In this case, we extracted the table from the first page of the sample PDF file.</p>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/ropensci/tabulapdf/main/inst/examples/mtcars.pdf"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_tables</span>(f2, <span class="at">pages =</span> <span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="tbl-mtcars" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">f2</span> <span class="op">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/ropensci/tabulapdf/main/inst/examples/mtcars.pdf"</span></span>
+<span></span>
+<span><span class="fu"><a href="https://docs.ropensci.org/tabulapdf/reference/extract_tables.html">extract_tables</a></span><span class="op">(</span><span class="va">f2</span>, pages <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div id="tbl-mtcars" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Extracted Table from the PDF
-</figcaption>
-<div aria-describedby="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-mtcars-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 # A tibble: 5 × 12
@@ -309,34 +277,25 @@ Table&nbsp;1: Extracted Table from the PDF
 <p><a href="#tbl-mtcars" class="quarto-xref">Table&nbsp;1</a> indicates that the table has been successfully extracted from the PDF file. We can now proceed to convert this table into a data frame for further analysis.</p>
 <p>Now we will extract a table from a specific page of another PDF file. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># URL of the monthly review PDF</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="st">"https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># URL of the monthly review PDF</span></span>
+<span><span class="va">f1</span> <span class="op">&lt;-</span> <span class="st">"https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Monthly%20Review%20May%2C%202024.pdf"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="fig-cpi" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="fig-cpi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="cpi.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: General Inflation (%)
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 <p>One can see from <a href="#fig-cpi" class="quarto-xref">Figure&nbsp;1</a> that the table we want to extract is on the third page of the PDF. Let’s extract the table from the third page of the PDF file.</p>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract and view the table from the third page of the PDF</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">extract_tables</span>(f1, <span class="at">pages =</span> <span class="dv">3</span>)[[<span class="dv">1</span>]] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div id="tbl-cpi" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extract and view the table from the third page of the PDF</span></span>
+<span><span class="fu"><a href="https://docs.ropensci.org/tabulapdf/reference/extract_tables.html">extract_tables</a></span><span class="op">(</span><span class="va">f1</span>, pages <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div id="tbl-cpi" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Extracted Table from the PDF
-</figcaption>
-<div aria-describedby="tbl-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-cpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 7
   `Table 1.a` ...2      ...3      General Inflation (%)(Base…¹ ...5  ...6  ...7 
@@ -353,63 +312,50 @@ Table&nbsp;2: Extracted Table from the PDF
 </figure>
 </div>
 <p><a href="#tbl-cpi" class="quarto-xref">Table&nbsp;2</a> indicates that the table has been successfully extracted from the PDF file. We can now proceed to convert this table into a data frame for further analysis.</p>
-</section>
-<section id="converting-extracted-table-to-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="converting-extracted-table-to-data-frame">Converting Extracted Table to Data Frame</h2>
+</section><section id="converting-extracted-table-to-data-frame" class="level2"><h2 class="anchored" data-anchor-id="converting-extracted-table-to-data-frame">Converting Extracted Table to Data Frame</h2>
 <p>After extracting the table, we need to convert it into a data frame and clean the data for further analysis.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>table <span class="ot">&lt;-</span> <span class="fu">extract_tables</span>(f1, <span class="at">pages =</span> <span class="dv">3</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the extracted table to a data frame</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>table_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(table)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Skip the first four rows</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>table_filtered <span class="ot">&lt;-</span> table_df <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="sc">-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the rows into a single text string</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>table_text <span class="ot">&lt;-</span> <span class="fu">apply</span>(table_filtered, <span class="dv">1</span>, paste, <span class="at">collapse =</span> <span class="st">" "</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the text into columns</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>table_separated <span class="ot">&lt;-</span> <span class="fu">str_split_fixed</span>(table_text, <span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>, <span class="at">n =</span> <span class="dv">19</span>)  <span class="co"># Adjust 'n' based on the number of columns</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the separated text into a data frame</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>table_separated_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(table_separated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://docs.ropensci.org/tabulapdf/reference/extract_tables.html">extract_tables</a></span><span class="op">(</span><span class="va">f1</span>, pages <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Convert the extracted table to a data frame</span></span>
+<span><span class="va">table_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">table</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Skip the first four rows</span></span>
+<span><span class="va">table_filtered</span> <span class="op">&lt;-</span> <span class="va">table_df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Combine the rows into a single text string</span></span>
+<span><span class="va">table_text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">table_filtered</span>, <span class="fl">1</span>, <span class="va">paste</span>, collapse <span class="op">=</span> <span class="st">" "</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Split the text into columns</span></span>
+<span><span class="va">table_separated</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_split.html">str_split_fixed</a></span><span class="op">(</span><span class="va">table_text</span>, <span class="st">"\\s+"</span>, n <span class="op">=</span> <span class="fl">19</span><span class="op">)</span>  <span class="co"># Adjust 'n' based on the number of columns</span></span>
+<span></span>
+<span><span class="co"># Convert the separated text into a data frame</span></span>
+<span><span class="va">table_separated_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">table_separated</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="renaming-columns" class="level2">
-<h2 class="anchored" data-anchor-id="renaming-columns">Renaming Columns</h2>
+</section><section id="renaming-columns" class="level2"><h2 class="anchored" data-anchor-id="renaming-columns">Renaming Columns</h2>
 <p>We will now rename the columns to make the data more readable and meaningful.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns of the data frame</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(table_separated_df) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Period"</span>, </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_general_yoy"</span>, <span class="st">"CPI_general_mom"</span>, </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_general_yoy_urban"</span>, <span class="st">"CPI_general_mom_urban"</span>, </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_general_yoy_rural"</span>, <span class="st">"CPI_general_mom_rural"</span>, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_food_yoy_urban"</span>, <span class="st">"CPI_food_mom_urban"</span>, </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_food_yoy_rural"</span>, <span class="st">"CPI_food_mom_rural"</span>, </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_non_food_yoy_urban"</span>, <span class="st">"CPI_non_food_mom_urban"</span>, </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CPI_non_food_yoy_rural"</span>, <span class="st">"CPI_non_food_mom_rural"</span>, </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SPI_yoy"</span>, <span class="st">"SPI_mom"</span>, </span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"WPI_yoy"</span>, <span class="st">"WPI_mom"</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Rename the columns of the data frame</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">table_separated_df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>  <span class="st">"Period"</span>, </span>
+<span>  <span class="st">"CPI_general_yoy"</span>, <span class="st">"CPI_general_mom"</span>, </span>
+<span>  <span class="st">"CPI_general_yoy_urban"</span>, <span class="st">"CPI_general_mom_urban"</span>, </span>
+<span>  <span class="st">"CPI_general_yoy_rural"</span>, <span class="st">"CPI_general_mom_rural"</span>, </span>
+<span>  <span class="st">"CPI_food_yoy_urban"</span>, <span class="st">"CPI_food_mom_urban"</span>, </span>
+<span>  <span class="st">"CPI_food_yoy_rural"</span>, <span class="st">"CPI_food_mom_rural"</span>, </span>
+<span>  <span class="st">"CPI_non_food_yoy_urban"</span>, <span class="st">"CPI_non_food_mom_urban"</span>, </span>
+<span>  <span class="st">"CPI_non_food_yoy_rural"</span>, <span class="st">"CPI_non_food_mom_rural"</span>, </span>
+<span>  <span class="st">"SPI_yoy"</span>, <span class="st">"SPI_mom"</span>, </span>
+<span>  <span class="st">"WPI_yoy"</span>, <span class="st">"WPI_mom"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="cleaned-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="cleaned-data-frame">Cleaned Data Frame</h2>
+</section><section id="cleaned-data-frame" class="level2"><h2 class="anchored" data-anchor-id="cleaned-data-frame">Cleaned Data Frame</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>table_separated_df <span class="sc">|&gt;</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">table_separated_df</span> <span class="op">|&gt;</span> <span class="fu">kableExtra</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 2%">
 <col style="width: 4%">
@@ -431,8 +377,7 @@ Table&nbsp;2: Extracted Table from the PDF
 <col style="width: 2%">
 <col style="width: 2%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">Period</th>
 <th style="text-align: left;">CPI_general_yoy</th>
 <th style="text-align: left;">CPI_general_mom</th>
@@ -452,8 +397,7 @@ Table&nbsp;2: Extracted Table from the PDF
 <th style="text-align: left;">SPI_mom</th>
 <th style="text-align: left;">WPI_yoy</th>
 <th style="text-align: left;">WPI_mom</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Aug-22</td>
@@ -921,29 +865,20 @@ Table&nbsp;2: Extracted Table from the PDF
 </table>
 </div>
 </div>
-</section>
-<section id="saving-the-data-to-a-csv-file-and-excel-file" class="level2">
-<h2 class="anchored" data-anchor-id="saving-the-data-to-a-csv-file-and-excel-file">Saving the Data to a CSV File and Excel File</h2>
+</section><section id="saving-the-data-to-a-csv-file-and-excel-file" class="level2"><h2 class="anchored" data-anchor-id="saving-the-data-to-a-csv-file-and-excel-file">Saving the Data to a CSV File and Excel File</h2>
 <p>Finally, we can save the cleaned data to a CSV file for future use.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the table to a CSV file</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(table_separated_df, <span class="st">"table_separated_df.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the table to an Excel file</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(table_separated_df, <span class="st">"table_separated_df.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Save the table to a CSV file</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">table_separated_df</span>, <span class="st">"table_separated_df.csv"</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co"># Save the table to an Excel file</span></span>
+<span><span class="fu">writexl</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/writexl/reference/write_xlsx.html">write_xlsx</a></span><span class="op">(</span><span class="va">table_separated_df</span>, <span class="st">"table_separated_df.xlsx"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+</section><section id="conclusion" class="level2"><h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>In this post, we demonstrated how to extract tables from PDF files using the <code>tabulapdf</code> package in R. We walked through the steps of loading necessary libraries, extracting tables from PDFs, converting them to data frames, cleaning the data, and finally saving it to a CSV file. This process can be very useful for extracting and analyzing data from PDF reports and documents.</p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1169,8 +1104,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1179,7 +1112,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/e5709c24-67b6-46e3-9614-6977450152ac\.netlify\.app\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1281,7 +1214,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1506,14 +1438,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://giscus.app/client.js" data-repo="Zahedasghar/Blog" data-repo-id="R_kgDOJGAzSw" data-category="General" data-category-id="DIC_kwDOJGAzS84CUuih" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
-</script>
-<input type="hidden" id="giscus-base-theme" value="light">
-<input type="hidden" id="giscus-alt-theme" value="dark">
+</script><script src="https://giscus.app/client.js" data-repo="Zahedasghar/Blog" data-repo-id="R_kgDOJGAzSw" data-category="General" data-category-id="DIC_kwDOJGAzS84CUuih" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><input type="hidden" id="giscus-base-theme" value="light"><input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="container"><strong>Made with <a href="https://quarto.org/" target="_blank">Posit Quarto</a></strong></span></p>
 </div>   
@@ -1525,8 +1453,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

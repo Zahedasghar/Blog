@@ -12,6 +12,20 @@
       url: 'https://zahid.quarto.pub/zahid-asghar'
     - id: e5709c24-67b6-46e3-9614-6977450152ac
       url: 'https://zahid.quarto.pub/quarto-update'
+    - id: b8736ef0-3379-4896-bd5b-2feac1f15e96
+      url: 'https://zahid.quarto.pub/zahid11'
+    - id: 97c591fa-2d44-4e11-a2f9-99783df14bc0
+      url: 'https://zahid.quarto.pub/zahid_1'
+    - id: 36caa6ea-f4b8-4870-95c0-2acc1ab9abf2
+      url: 'https://zahid.quarto.pub/zahid_1'
+    - id: a6d92ee1-a80b-4dee-96bb-42bc3ddb6bf7
+      url: 'https://zahid.quarto.pub/pdf_table'
+    - id: 62b5b73a-939b-4157-8f91-7dc5c8776642
+      url: 'https://zahid.quarto.pub/zahed'
+    - id: fb1f5f15-dc70-4b25-9c65-b65a05a00b12
+      url: 'https://zahid.quarto.pub/zahid_1'
+    - id: 154ca20e-e1ae-4952-bdc1-665e9565e98b
+      url: 'https://zahid.quarto.pub/zahid_1'
   netlify:
     - id: 41570554-fd48-4763-8288-3be5ede5af88
       url: 'https://zahedasghar.netlify.app'
@@ -23,3 +37,11 @@
       url: 'https://resplendent-chebakia-30306e.netlify.app'
     - id: 78044a5f-d8e3-4df9-b4e0-ac408b3f34da
       url: 'https://willowy-phoenix-8029f5.netlify.app'
+    - id: 7cbe42c0-1153-4e7e-bb0b-ab902c23715f
+      url: 'https://stately-daffodil-e3986e.netlify.app'
+    - id: c4c1fe25-5d4e-4287-8a9d-70678c3c20d6
+      url: 'https://chimerical-cannoli-9c9fea.netlify.app'
+    - id: 874513fd-17de-494e-9479-f9a26c5dacc1
+      url: 'https://cozy-capybara-c614a2.netlify.app'
+    - id: c7cb30bb-ec6c-4ef5-929f-ad0f513af0e9
+      url: 'https://golden-custard-63b79b.netlify.app'
