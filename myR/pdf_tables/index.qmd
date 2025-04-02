@@ -19,7 +19,7 @@ execute:
   message: false
 ---
 
-![](pdf.webp){width=100%}
+![](pdf.webp){width="100%"}
 
 ## Introduction
 
@@ -29,11 +29,11 @@ In this blog post, we will explore how to extract data from PDF files using the 
 
 Extracting tables from PDF files is crucial for several reasons:
 
-1. **Data Accessibility**: Many important documents and reports are shared in PDF format. Extracting data from these documents makes it accessible for analysis and further use.
-2. **Automated Data Processing**: Manual data entry from PDFs is time-consuming and prone to errors. Automated extraction ensures accuracy and efficiency.
-3. **Data Integration**: Extracting data from PDFs allows for the integration of information from various sources, enhancing the comprehensiveness of data analysis.
-4. **Historical Data Analysis**: Many historical documents are available only in PDF format. Extracting data from these PDFs allows for the analysis of trends over time.
-5. **Enhanced Decision Making**: Having access to data in an analyzable format helps in making informed decisions based on comprehensive data analysis.
+1.  **Data Accessibility**: Many important documents and reports are shared in PDF format. Extracting data from these documents makes it accessible for analysis and further use.
+2.  **Automated Data Processing**: Manual data entry from PDFs is time-consuming and prone to errors. Automated extraction ensures accuracy and efficiency.
+3.  **Data Integration**: Extracting data from PDFs allows for the integration of information from various sources, enhancing the comprehensiveness of data analysis.
+4.  **Historical Data Analysis**: Many historical documents are available only in PDF format. Extracting data from these PDFs allows for the analysis of trends over time.
+5.  **Enhanced Decision Making**: Having access to data in an analyzable format helps in making informed decisions based on comprehensive data analysis.
 
 So extracting tables from PDFs is a critical skill that enables access to important data, ensures accuracy, and saves time in data processing.We can automate the process and make the data extraction workflow more efficient. This not only improves productivity but also ensures that the data extracted is accurate and reliable, providing a solid foundation for any subsequent analysis or decision-making processes.
 
@@ -43,10 +43,10 @@ Given these reasons, it's evident why efficient tools for extracting data from P
 
 I have tried `tabulizer` to install but not successful. I have come across `tabulapdf` package and find it very handy. To begin, we'll need to install and load the necessary libraries. Here is the list of packages we'll be using:
 
-- `rJava`
-- `tabulapdf`
-- `pdftools`
-- `tidyverse`
+-   `rJava`
+-   `tabulapdf`
+-   `pdftools`
+-   `tidyverse`
 
 Let's load these libraries in R.
 
@@ -59,13 +59,9 @@ library(tidyverse)
 
 ```
 
-## Extracting Tables from a PDF 
-
-
-
+## Extracting Tables from a PDF
 
 The `extract_tables` function extracts tables from the specified page of the PDF file. In this case, we extracted the table from the first page of the sample PDF file.
-
 
 ```{r}
 #| label: tbl-mtcars
@@ -79,7 +75,6 @@ extract_tables(f2, pages = 1)
 
 Now we will extract a table from a specific page of another PDF file. This PDF is a monthly report on Consumer Price Index from the Pakistan Bureau of Statistics.
 
-
 ```{r}
 
 # URL of the monthly review PDF
@@ -87,13 +82,11 @@ f1 <- "https://www.pbs.gov.pk/sites/default/files/price_statistics/cpi/may/Month
 
 ```
 
-
 ::: {#fig-cpi}
-
 ![](cpi.png)
 
-General Inflation (%) 
-::: 
+General Inflation (%)
+:::
 
 One can see from @fig-cpi that the table we want to extract is on the third page of the PDF. Let's extract the table from the third page of the PDF file.
 
@@ -130,7 +123,7 @@ table_separated <- str_split_fixed(table_text, "\\s+", n = 19)  # Adjust 'n' bas
 table_separated_df <- as.data.frame(table_separated)
 ```
 
-## Renaming Columns 
+## Renaming Columns
 
 We will now rename the columns to make the data more readable and meaningful.
 
@@ -157,9 +150,6 @@ colnames(table_separated_df) <- c(
 table_separated_df |> kableExtra::kable()
 ```
 
-
-
-
 ## Saving the Data to a CSV File and Excel File
 
 Finally, we can save the cleaned data to a CSV file for future use.
@@ -172,6 +162,6 @@ write.csv(table_separated_df, "table_separated_df.csv", row.names = FALSE)
 writexl::write_xlsx(table_separated_df, "table_separated_df.xlsx")
 ```
 
-## Conclusion 
+## Conclusion
 
-In this post, we demonstrated how to extract tables from PDF files using the `tabulapdf` package in R. We walked through the steps of loading necessary libraries, extracting tables from PDFs, converting them to data frames, cleaning the data, and finally saving it to a CSV file. This process can be very useful for extracting and analyzing data from PDF reports and documents. 
+In this post, we demonstrated how to extract tables from PDF files using the `tabulapdf` package in R. We walked through the steps of loading necessary libraries, extracting tables from PDFs, converting them to data frames, cleaning the data, and finally saving it to a CSV file. This process can be very useful for extracting and analyzing data from PDF reports and documents.
