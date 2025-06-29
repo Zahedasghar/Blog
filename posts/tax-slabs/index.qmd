@@ -1,0 +1,14 @@
+---
+title: "Understanding Pakistan's Tax Slabs"
+date: 2025-06-27
+format:
+  html:
+    toc: true
+    code-fold: true
+title-block-banner: true
+title-block-style: default
+---
+
+This analysis reveals the shocking reality of Pakistan’s tax policy on salaried individuals over the past five years. Combined with one of the highest historical inflation rates reaching 37% in 2023, the salaried class faces a double burden: higher nominal tax rates and severely eroded purchasing power.
+
+For more details please refer to the [tax slabs](https://zahid.quarto.pub/tax-slabs/).
