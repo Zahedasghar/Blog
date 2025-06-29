@@ -5,8 +5,7 @@ date: "2024-06-12"
 categories: [opinion]
 ---
 
-![](https://www.infosyspublicservices.com/content/dam/infosys-ips/2021/infographics/data-analytics-challenges.png)
-**Harnessing Data Analytics for Effective Governance in Pakistan: A Support, Not a Substitute**
+![](https://www.infosyspublicservices.com/content/dam/infosys-ips/2021/infographics/data-analytics-challenges.png) **Harnessing Data Analytics for Effective Governance in Pakistan: A Support, Not a Substitute**
 
 Given the intricate challenges confronting Pakistan, a nation with a population of two hundred and forty million, in the third decade of the 21st century, it is imperative to establish robust government analytics to enhance decision-making processes for senior leadership and bureaucracy. In today's digital age, societal expectations are heightened, while government resources remain limited. Consequently, maximizing the efficiency of these resources is paramount in addressing development and other challenges. Data analytics provides a means for thorough examination and holistic understanding of issues, enabling governments to better cope with these challenges. As governments expand their scope of operations to cater to the needs of the masses, there is a growing need to bolster their capacity to measure and evaluate a wide array of activities. In the digital age, developing the capability to obtain, interpret, and efficiently employ data for informed decision-making is crucial for attaining developmental objectives. Early investment in data-driven policies is vital to maximize the use of resources and promptly pursue desired outcomes. The granularity of data will offer profound insights, enhancing the effectiveness of decision-making processes.
 
@@ -14,7 +13,7 @@ In our pursuit of a better future, it is important to not only focus on having t
 
 The private sector has utilized the full potential of data. Nonetheless, the public sector operates under distinct dynamics compared to the private sector, despite the significant benefits that data has brought to the latter. Therefore, it's important to understand that it is not the case that everything is measurable or that everything which is measurable is of great importance for public policy. Secondly, it is not data but data that matters. Easy-to-measure indicators may lead to false alarms leaving real issues unattended. It is also needed to protect space for judgment, discretion, and deliberation because not everything that matters can be measured.
 
-My philosophy is that measuring what matters is more important rather than working on what is measurable. Secondly, what analytics can do is strengthen the quality of conversations about how to improve public administration, rather than dictating managerial responses to specific analytics findings. 
+My philosophy is that measuring what matters is more important rather than working on what is measurable. Secondly, what analytics can do is strengthen the quality of conversations about how to improve public administration, rather than dictating managerial responses to specific analytics findings.
 
 Analytics, in my opinion, should supplement/complement decision making of senior leadership and senior government officials' practical and tacit knowledge. Data analytics can strengthen the quality of conversation about how to improve public administration, rather than forcing to adapt specific analytics findings. It will generate evidence for better conversation and thus decisions- about how to improve public administration, execute projects efficiently and effectively, how to monitor and evaluate different projects among many other things.
 

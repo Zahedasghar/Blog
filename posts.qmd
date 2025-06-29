@@ -1,15 +1,12 @@
 ---
 title: "Blog"
+
 listing:
   contents: posts
-sort: "date desc"
-type: default
-# categories: true
-# sort-ui: false
-# filter-ui: false
-# image-height: 10em
-# page-layout: full
+  sort: "date desc"
+  type: default
+
 title-block-banner: true
 ---
 
-## My blog posts
+My blog posts

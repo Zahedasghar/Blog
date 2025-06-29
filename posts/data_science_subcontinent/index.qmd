@@ -1,8 +1,8 @@
 ---
 title: "Spicing Up Data Science: A Delicious Blend of Analytics and Gourmet Delights"
 subtile: "Exploratory Data Analysis of Indian Food 101 Dataset"
+date: 2024-07-28
 author: "Zahid Asghar"
-date: "2024-07-28"
 categories: [analysis]
 ---
 

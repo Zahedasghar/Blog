@@ -9,7 +9,6 @@ categories: [analysis]
 
 ![](https://m.media-amazon.com/images/I/51idKBQjijL._CR1,0,638,360_SR342,193_.jpg){width="658"}
 
-
 Verity Herding's *AI Needs You* offers a thought-provoking and comprehensive exploration of the rapid advancements and complex ethical dilemmas presented by artificial intelligence. The book is both a thrilling and alarming dive into AI's potential, showcasing its remarkable breakthroughs and the significant concerns it raises.
 
 Herding begins by highlighting the unprecedented speed at which AI researchers, armed with vast data and computational power, are achieving breakthroughs. These advancements have the potential to revolutionize various fields, from accurately diagnosing diseases to analyzing vast amounts of text data for profound insights. However, this great promise is tempered by the potential for unethical, disturbing, and dangerous uses of AI technology.
